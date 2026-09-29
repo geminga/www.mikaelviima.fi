@@ -36,17 +36,17 @@ Templates read from these — e.g. `{{ author.contact_email }}` — so a placeho
 
 The brief explicitly says: leave obvious placeholders rather than guessing. These are stored as literal bracketed strings in the YAML data files (e.g. `"[CONTACT_EMAIL — confirm before launch]"`) and rendered as-is:
 
-- Contact / press / rights email addresses
-- Instagram / social URLs
-- Final production domain
-- Author portrait(s) and photographer credits — rendered as a labeled placeholder block (`.portrait-placeholder`), never a stock/AI photo, per brief §8 and §31
-- Book cover images — labeled placeholder blocks until real cover art is supplied
+- Author portrait and photographer credit — still a labeled placeholder block (`.portrait-placeholder`), never a stock/AI photo, per brief §8 and §31
 - Poetry excerpts (`{{POEM_1_TITLE}}` etc. per brief §12) — not filled in until the final manuscript selection is locked
 - Third Aarni Susi novel status, translation-rights status, any agent/representation info
 
-**Do not invent values for these.** If the user supplies a real email, URL, image, or poem text in a future session, replace the placeholder in the relevant `_data/*.yaml` file (or `src/assets/images/`) — do not scatter the new value across templates.
+**Do not invent values for these.** If the user supplies a real image or poem text in a future session, replace the placeholder in the relevant `_data/*.yaml` file (or `src/assets/images/`) — do not scatter the new value across templates.
 
-**Expected image filenames** (none exist yet — user plans to drop these into `src/assets/images/` in a future session): `portrait.jpg` (author photo) and `covers/verijalki.jpg`, `covers/rekyyli.jpg`, `covers/vaaralliset-gurut.jpg` (book covers). When they arrive: swap the `.portrait-placeholder` / `.cover` placeholder markup in `index.njk`, `about/index.njk`, `books/index.njk`, and `_includes/partials/book-detail-macro.njk` for real `<img>` tags, get intrinsic width/height (e.g. via the `image-size` package) to set explicit dimensions and avoid layout shift per brief §25, and drop the grid+corner-mark "archival plate" treatment for that specific slot (it's meant to signal "pending," not to frame a real photo).
+**Resolved placeholders**: contact/press/rights email (`mikaelviima@outlook.com`), Instagram (`@mikaelviima`), production domain (`www.mikaelviima.com`), and all three book covers (downloaded directly from WSOY's and Otava's own sites — see `src/assets/images/covers/`) are filled in as of 2026-09-29.
+
+**Cover images**: `src/_includes/partials/cover-macro.njk` renders a real `<img>` when `book.cover_image` is set in `books.yaml` (all three books have one now), falling back to the `.cover--placeholder` "pending art" treatment otherwise — this is the pattern to follow for the still-pending author portrait when it arrives: give it the same real-vs-placeholder branching rather than unconditionally swapping the markup.
+
+**Trap to remember**: a publisher's book page HTML doesn't necessarily contain the actual cover `<img src>` — Otava's page has a static `<img>` tag labeled "photo of the author," while the real cover loads lazily via `data-src` pointing at their media-bank API (`mediapankki.otava.fi/api/v1/assets/by-isbn/<isbn>.jpg`). Always visually verify a downloaded "cover" against the real book before using it — don't trust a filename, alt text, or an automated page-summary tool's label.
 
 ## Voice discipline
 
@@ -105,4 +105,6 @@ None of this changes brief-mandated content, copy, brand hierarchy, or the palet
 
 ## Status
 
-Launch scope = brief §33's minimum viable site: Home, Poetry (FEED), Books (+ 3 book pages), About, Contact. Press page included as a bonus per current structure. Check this section and update it as real content (photos, emails, poems) arrives and placeholders get filled in.
+Launch scope = brief §33's minimum viable site: Home, Poetry (FEED), Books (+ 3 book pages), About, Contact. Press page included as a bonus per current structure.
+
+Still outstanding before real launch: author portrait, poetry excerpts (FEED manuscript not locked yet), third Aarni Susi novel status. Everything else in brief §30's original placeholder list is filled in — check this section and update it as the remaining items arrive.
