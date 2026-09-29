@@ -1047,6 +1047,18 @@ button {
   width: 100%;
 }
 
+/* Links written in note Markdown get the same rust underline as .text-link. */
+.note__body a:not(:has(img)) {
+  text-decoration: underline;
+  text-decoration-color: var(--rust);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color var(--transition-fast);
+}
+
+.note__body a:not(:has(img)):hover {
+  text-decoration-color: currentColor;
+}
+
 .note__body img {
   display: block;
   max-width: 100%;
