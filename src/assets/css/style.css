@@ -894,6 +894,165 @@ button {
   max-width: var(--measure);
 }
 
+/* -------------------- Notes -------------------- */
+
+.note-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: var(--measure);
+}
+
+.note-list__item {
+  padding-block: var(--space-3);
+  border-bottom: 1px solid rgba(24, 26, 29, 0.12);
+}
+
+.note-list__item:first-child {
+  padding-top: 0;
+}
+
+.note-list__item--thumb {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: var(--space-2);
+  align-items: start;
+}
+
+@media (min-width: 40rem) {
+  .note-list__item--thumb {
+    grid-template-columns: 11rem 1fr;
+    gap: var(--space-3);
+  }
+}
+
+.note-list__thumb {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--carbon);
+}
+
+.note-list__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity var(--transition-fast);
+}
+
+.note-list__thumb:hover img {
+  opacity: 0.85;
+}
+
+.note-list__meta,
+.note__date,
+.note__audio-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4em 1em;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--smoke);
+  margin: 0 0 0.5em;
+}
+
+.note-list__tag {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rust);
+}
+
+.note-list__tag--draft {
+  color: var(--steel);
+}
+
+.note-list__title {
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.note-list__title a {
+  text-decoration: none;
+  background-image: linear-gradient(var(--rust), var(--rust));
+  background-size: 0 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--transition-fast);
+}
+
+.note-list__title a:hover,
+.note-list__title a:focus-visible {
+  background-size: 100% 2px;
+}
+
+.note-list__summary {
+  margin: 0.5em 0 0;
+  color: var(--ink);
+}
+
+.note {
+  padding-block: var(--space-5);
+}
+
+.note .content-section__label a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.note__title {
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  max-width: 22ch;
+  margin: 0 0 var(--space-4);
+}
+
+.note__figure {
+  margin: 0 0 var(--space-4);
+  max-width: 56rem;
+}
+
+.note__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.note__caption {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--smoke);
+  margin-top: 0.6em;
+}
+
+.note__audio {
+  margin: 0 0 var(--space-4);
+  max-width: var(--measure);
+}
+
+.note__audio audio {
+  width: 100%;
+}
+
+.note__body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-block: var(--space-3);
+}
+
+.note__back {
+  margin-top: var(--space-5);
+  font-family: var(--font-sans);
+}
+
 /* -------------------- Lists (background, topics) -------------------- */
 
 .fact-list {

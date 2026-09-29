@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+permalink: "/notes/"
+seo_title: "Notes — Mikael Viima"
+meta_description: "Notes by Mikael Viima: a diary kept in public, with readings, images and loose ends."
+og_type: "website"
+---
+<section class="section theme-dark motif-host">
+  {% include "partials/wind-mark.njk" %}
+  <div class="wrap">
+    <p class="label content-section__label">Notes</p>
+    <h1 class="content-section__heading">A diary kept in public.</h1>
+    <div class="content-section__body">
+      <p>Readings, images, loose ends. Whatever did not fit anywhere else.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {%- if collections.notes.length %}
+    <ol class="note-list">
+      {%- for note in collections.notes %}
+      <li class="note-list__item{% if note.data.image %} note-list__item--thumb{% endif %}">
+        {%- if note.data.image %}
+        <a class="note-list__thumb" href="{{ note.url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ note.data.image }}" alt=""
+            {%- if note.data.image_width %} width="{{ note.data.image_width }}" height="{{ note.data.image_height }}"{% endif %}
+            loading="lazy" decoding="async">
+        </a>
+        {%- endif %}
+        <div class="note-list__text">
+        <p class="note-list__meta">
+          <time datetime="{{ note.date | isoDate }}">{{ note.date | longDate }}</time>
+          {%- if note.data.audio %}<span class="note-list__tag">Audio{% if note.data.audio_duration %} · {{ note.data.audio_duration }}{% endif %}</span>{% endif %}
+          {%- if note.data.draft %}<span class="note-list__tag note-list__tag--draft">Draft</span>{% endif %}
+        </p>
+        <h2 class="note-list__title"><a href="{{ note.url }}">{{ note.data.title }}</a></h2>
+        {%- if note.data.summary %}
+        <p class="note-list__summary">{{ note.data.summary }}</p>
+        {%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+    {%- else %}
+    <p class="poem-placeholder">Coming soon.</p>
+    {%- endif %}
+  </div>
+</section>

@@ -73,7 +73,32 @@ The brief's "Copy clichés" list is a hard filter for any new copy: no "master s
 
 ## Person / point of view (standing rule, set by the user 2026-09-29)
 
-**Third person for the record, first person for the voice.** Facts, credentials, bios, book copy, meta descriptions and anything a journalist or festival might copy-paste are third person ("Viima's doctoral work…", "He holds a PhD…"). First person ("I…") is allowed only where it is visibly set apart as the author speaking — a styled pull-quote (`.pull-quote`, or `.pull-quote--long` for longer lines) or a direct answer to a question heading (About's "Why write?"). Never put an "I" sentence in plain running body text next to "he" copy. Current first-person spots: Home pull-quote, Poetry page opening pull-quote, About "Why write?".
+**Third person for the record, first person for the voice.** Facts, credentials, bios, book copy, meta descriptions and anything a journalist or festival might copy-paste are third person ("Viima's doctoral work…", "He holds a PhD…"). First person ("I…") is allowed only where it is visibly set apart as the author speaking — a styled pull-quote (`.pull-quote`, or `.pull-quote--long` for longer lines) or a direct answer to a question heading (About's "Why write?"). Never put an "I" sentence in plain running body text next to "he" copy. Current first-person spots: Home pull-quote, Poetry page opening pull-quote, About "Why write?". **Exception: Notes (`/notes/`) is the author's diary and is first person throughout** — the rule applies to its list-page intro and meta copy, not to the notes themselves.
+
+## Notes (diary) section
+
+Built 2026-09-30. Each note is one Markdown file in `src/notes/`, named `YYYY-MM-DD-slug.md` — Eleventy takes the date from the filename prefix and the URL from the rest (`/notes/slug/`). Shared settings (layout, URL, SEO title, Article structured data, draft handling) live in `src/notes/notes.11tydata.js`; the list page is `src/notes-index.njk` (deliberately *outside* `src/notes/`, otherwise the directory data file hijacks its URL and layout). The `notes` collection is defined in `.eleventy.js`, newest first.
+
+Front matter a note can use — only `title` is required:
+
+```yaml
+title: "…"
+summary: "One line for the list page and meta description"
+image: /assets/images/notes/2026-10-02-whatever.jpg   # lead image, shown above the text
+image_alt: "…"
+image_width: 1600      # give real pixel dimensions to avoid layout shift
+image_height: 1200
+image_caption: "…"
+audio: /assets/audio/2026-10-02-gass.mp3             # plain <audio>, preload none, never autoplay
+audio_duration: "6:40"
+draft: true            # visible in `npm run dev` (tagged "Draft"), excluded from the live build
+```
+
+**Phone photos carry GPS coordinates in their metadata — never publish an original.** Put originals in the gitignored `originals/` folder at the repo root (anything under `src/assets/` gets published), then save a web copy: EXIF stripped, longest edge ~1600px, JPEG q≈82, colour (ICC) profile kept. The first two notes (Floor.jpg, PoemStack.JPEG, 2026-09-30) were handled this way. Extra images inside the text use normal Markdown `![alt](/assets/images/notes/…)`. Note images go in `src/assets/images/notes/`, audio in `src/assets/audio/` (voice at ~64 kbps mono ≈ 0.5 MB/min; move audio to external object storage if the repo grows large — never embed SoundCloud/YouTube/Spotify players, they bring third-party tracking).
+
+The "Notes" nav item and the sitemap entries appear **automatically** once at least one non-draft note exists (`requires_collection: "notes"` in `site.yaml`, checked in `header.njk`). Until then `/notes/` exists but is unlinked and shows "Coming soon." Not yet built: RSS feed (brief wants one once Notes is actually in use — `@11ty/eleventy-plugin-rss`), podcast-style audio enclosures.
+
+Copyright caution for readings: recording and publishing long passages of in-copyright authors (e.g. William Gass, d. 2017) needs permission; short quoted passages inside the author's own commentary are the safe pattern.
 
 ## Repo structure
 
@@ -88,6 +113,7 @@ src/
       cover-macro.njk            # real book cover <img> vs. placeholder
       portrait-macro.njk         # real author portrait <img> vs. placeholder
       book-detail-macro.njk      # shared markup for the 3 book detail pages (import "with context")
+    layouts/note.njk             # single diary note
   assets/
     css/style.css
     fonts/                       # self-hosted woff2
@@ -95,6 +121,8 @@ src/
       portrait.jpg               # real author photo
       covers/*.jpg               # real book covers (verijalki, rekyyli, vaaralliset-gurut)
     js/nav.js                    # mobile nav toggle, ~10 lines
+  notes/                         # diary entries, YYYY-MM-DD-slug.md + notes.11tydata.js
+  notes-index.njk                # /notes/ list page (kept outside notes/ on purpose)
   index.njk                      # Home
   poetry/index.njk               # FEED
   books/index.njk

@@ -25,6 +25,20 @@ module.exports = function (eleventyConfig) {
     return (arr || []).find((item) => item.slug === slug);
   });
 
+  // Notes, newest first. The glob picks up only Markdown notes, not the list page.
+  eleventyConfig.addCollection("notes", (api) =>
+    api.getFilteredByGlob("src/notes/*.md").reverse()
+  );
+
+  eleventyConfig.addFilter("longDate", (value) =>
+    new Date(value).toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    })
+  );
+
   eleventyConfig.addFilter("isoDate", (value) => {
     if (!value) return "";
     return new Date(value).toISOString().split("T")[0];

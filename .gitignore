@@ -3,3 +3,6 @@ _site/
 .DS_Store
 *.log
 src/debug/
+
+# Full-size originals (camera metadata incl. GPS) — never publish; web copies live in src/assets/images/
+originals/

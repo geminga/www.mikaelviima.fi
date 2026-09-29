@@ -7,6 +7,10 @@ nav_primary:
     url: "/books/"
   - label: "About"
     url: "/about/"
+  # Shown only once at least one published note exists (see header.njk).
+  - label: "Notes"
+    url: "/notes/"
+    requires_collection: "notes"
   - label: "Contact"
     url: "/contact/"
 nav_footer:

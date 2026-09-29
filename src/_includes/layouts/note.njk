@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+---
+<article class="note">
+  <div class="wrap">
+    <p class="label content-section__label"><a href="/notes/">Notes</a></p>
+    <p class="note__date"><time datetime="{{ page.date | isoDate }}">{{ page.date | longDate }}</time></p>
+    <h1 class="note__title">{{ title }}</h1>
+
+    {%- if image %}
+    <figure class="note__figure">
+      <img src="{{ image }}" alt="{{ image_alt or '' }}"
+        {%- if image_width %} width="{{ image_width }}" height="{{ image_height }}"{% endif %}
+        loading="eager" decoding="async">
+      {%- if image_caption %}
+      <figcaption class="note__caption">{{ image_caption }}</figcaption>
+      {%- endif %}
+    </figure>
+    {%- endif %}
+
+    {%- if audio %}
+    <div class="note__audio">
+      <p class="note__audio-label">Audio{% if audio_duration %} · {{ audio_duration }}{% endif %}</p>
+      <audio controls preload="none" src="{{ audio }}"></audio>
+    </div>
+    {%- endif %}
+
+    <div class="note__body prose">
+      {{ content | safe }}
+    </div>
+
+    <p class="note__back"><a class="text-link" href="/notes/">All notes</a></p>
+  </div>
+</article>
