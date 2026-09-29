@@ -12,6 +12,7 @@ module.exports = async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/CNAME");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
   eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
 
@@ -42,6 +43,21 @@ module.exports = async function (eleventyConfig) {
       timeZone: "UTC",
     })
   );
+
+  // "28 July – 1 August 2026" / "28–31 July 2026", for notes with a date_end.
+  eleventyConfig.addFilter("dateRange", (start, end) => {
+    const fmt = (d, opts) =>
+      new Date(d).toLocaleDateString("en-GB", { ...opts, timeZone: "UTC" });
+    if (!end) return fmt(start, { day: "numeric", month: "long", year: "numeric" });
+    const a = new Date(start);
+    const b = new Date(end);
+    const sameYear = a.getUTCFullYear() === b.getUTCFullYear();
+    const sameMonth = sameYear && a.getUTCMonth() === b.getUTCMonth();
+    const tail = fmt(b, { day: "numeric", month: "long", year: "numeric" });
+    if (sameMonth) return `${a.getUTCDate()}–${tail}`;
+    if (sameYear) return `${fmt(a, { day: "numeric", month: "long" })} – ${tail}`;
+    return `${fmt(a, { day: "numeric", month: "long", year: "numeric" })} – ${tail}`;
+  });
 
   eleventyConfig.addFilter("isoDate", (value) => {
     if (!value) return "";

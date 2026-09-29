@@ -84,6 +84,7 @@ Front matter a note can use — only `title` is required:
 ```yaml
 title: "…"
 summary: "One line for the list page and meta description"
+date_end: 2026-08-01   # optional: shows "28 July – 1 August 2026"; the filename date is the start and sets the sort order
 image: /assets/images/notes/2026-10-02-whatever.jpg   # lead image, shown above the text
 image_alt: "…"
 image_width: 1600      # give real pixel dimensions to avoid layout shift
@@ -136,6 +137,10 @@ src/
   sitemap.njk                    # outputs sitemap.xml
   robots.txt
   CNAME                          # custom domain, passthrough-copied every build
+  favicon.ico                    # 16/32/48 favicon; SVG + apple-touch-icon live in assets/
+                                 # Design: bold Newsreader "V" (paper) on carbon + short rust rule,
+                                 # same rule as the section-kicker labels. Glyph is outlined to a path
+                                 # in favicon.svg (no font dependency).
   debug/                         # gitignored scratch space for troubleshooting screenshots — never commit this
 .eleventy.js
 ```

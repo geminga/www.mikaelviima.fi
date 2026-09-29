@@ -36,7 +36,7 @@ og_type: "website"
         {%- endif %}
         <div class="note-list__text">
         <p class="note-list__meta">
-          <time datetime="{{ note.date | isoDate }}">{{ note.date | longDate }}</time>
+          {% if note.data.date_end %}<time datetime="{{ note.date | isoDate }}">{{ note.date | dateRange(note.data.date_end) }}</time>{% else %}<time datetime="{{ note.date | isoDate }}">{{ note.date | longDate }}</time>{% endif %}
           {%- if note.data.audio %}<span class="note-list__tag">Audio{% if note.data.audio_duration %} · {{ note.data.audio_duration }}{% endif %}</span>{% endif %}
           {%- if note.data.draft %}<span class="note-list__tag note-list__tag--draft">Draft</span>{% endif %}
         </p>

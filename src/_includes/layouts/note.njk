@@ -4,7 +4,7 @@ layout: layouts/base.njk
 <article class="note">
   <div class="wrap">
     <p class="label content-section__label"><a href="/notes/">Notes</a></p>
-    <p class="note__date"><time datetime="{{ page.date | isoDate }}">{{ page.date | longDate }}</time></p>
+    <p class="note__date">{% if date_end %}<time datetime="{{ page.date | isoDate }}">{{ page.date | dateRange(date_end) }}</time>{% else %}<time datetime="{{ page.date | isoDate }}">{{ page.date | longDate }}</time>{% endif %}</p>
     <h1 class="note__title">{{ title }}</h1>
 
     {%- if image %}
