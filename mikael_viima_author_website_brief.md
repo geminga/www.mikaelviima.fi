@@ -561,6 +561,8 @@ The series began with **Verijälki** in 2022 and continued with **Rekyyli** in 2
 
 *Heading superseded 2026-09-29 — the user called this ChatGPT-authored heading defeatist. Live version: "Published. And now, it begins."*
 
+*The closing "next phase is outward" line below was cut from the live site the same day — the user's call, no reason given or needed.*
+
 ### Already published. Not yet finished.
 
 Mikael Viima's fiction has been published in Finland by WSOY. Under his real name, Manne Laukkanen, he is also the author of the nonfiction book **Vaaralliset gurut**, published by Otava in 2024 as well as his PhD thesis, blueprinting a statistical home prediction system to predict homebase of serial offenders based on their spatial and crime site behaviour.
