@@ -17,5 +17,5 @@ structured_data:
   isbn: "978-951-0-47442-6"
   numberOfPages: 356
 ---
-{% import "partials/book-detail-macro.njk" as m %}
+{% import "partials/book-detail-macro.njk" as m with context %}
 {{ m.bookDetail(books | findBySlug("verijalki")) }}

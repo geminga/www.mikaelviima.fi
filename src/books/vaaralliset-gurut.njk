@@ -18,5 +18,5 @@ structured_data:
   isbn: "978-951-1-42050-7"
   numberOfPages: 234
 ---
-{% import "partials/book-detail-macro.njk" as m %}
+{% import "partials/book-detail-macro.njk" as m with context %}
 {{ m.bookDetail(books | findBySlug("vaaralliset-gurut")) }}

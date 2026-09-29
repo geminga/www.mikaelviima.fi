@@ -17,5 +17,5 @@ structured_data:
   isbn: "978-951-0-47854-7"
   numberOfPages: 334
 ---
-{% import "partials/book-detail-macro.njk" as m %}
+{% import "partials/book-detail-macro.njk" as m with context %}
 {{ m.bookDetail(books | findBySlug("rekyyli")) }}

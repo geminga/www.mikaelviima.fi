@@ -53,8 +53,11 @@
       {%- endif %}
 
       <div class="content-section__body" style="margin-top: var(--space-3);">
-        <p>Originally published in {{ book.language }} by <strong>{{ book.publisher }}</strong> in {{ book.year }}.</p>
-        <p>For English-language publication or rights enquiries: {{ author.rights_contact }}</p>
+        <p>
+          Originally published in {{ book.language }} by <strong>{{ book.publisher }}</strong> in {{ book.year }}.
+          {%- if book.publisher_url %} <a class="text-link" href="{{ book.publisher_url }}">View at publisher</a>.{% endif %}
+        </p>
+        <p>For English-language publication or rights enquiries: <a class="text-link" href="mailto:{{ author.rights_contact }}">{{ author.rights_contact }}</a></p>
       </div>
     </div>
   </div>

@@ -98,7 +98,7 @@ structured_data:
     <h2 class="content-section__heading">Background</h2>
     <ul class="fact-list">
       {%- for item in author.background %}
-      <li>{{ item }}</li>
+      <li>{{ item | safe }}</li>
       {%- endfor %}
     </ul>
   </div>

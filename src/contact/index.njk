@@ -13,7 +13,7 @@ og_type: "website"
         readings, festival invitations and professional enquiries</strong>:
       </p>
     </div>
-    <p class="contact-email">{{ author.contact_email }}</p>
+    <p class="contact-email"><a class="text-link" href="mailto:{{ author.contact_email }}">{{ author.contact_email }}</a></p>
     <p class="content-section__body">
       For rights to individual Finnish editions, use the appropriate publisher/rights
       contact once confirmed.
@@ -21,9 +21,9 @@ og_type: "website"
 
     <div class="contact-block" style="margin-top: var(--space-4);">
       <p class="label content-section__label">Social</p>
-      <p>Instagram: {{ author.instagram_url }}</p>
+      <p>Instagram: <a class="text-link" href="{{ author.instagram_url }}">@mikaelviima</a></p>
       {%- if author.optional_social_url %}
-      <p>Other: {{ author.optional_social_url }}</p>
+      <p>Other: <a class="text-link" href="{{ author.optional_social_url }}">{{ author.optional_social_url }}</a></p>
       {%- endif %}
     </div>
   </div>
