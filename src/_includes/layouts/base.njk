@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% include "partials/seo.njk" %}
   <link rel="stylesheet" href="/assets/css/style.css">
+  {%- if collections.notes and collections.notes.length %}
+  <link rel="alternate" type="application/atom+xml" title="Mikael Viima — Notes" href="/notes/feed.xml">
+  {%- endif %}
   <link rel="icon" href="data:,">
 </head>
 <body class="{{ bodyClass or '' }}">

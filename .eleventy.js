@@ -2,8 +2,12 @@ const markdownIt = require("markdown-it");
 const yaml = require("js-yaml");
 const md = markdownIt({ html: false, breaks: false, linkify: false });
 
-module.exports = function (eleventyConfig) {
+module.exports = async function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
+
+  // RSS plugin is ESM-only; only its filters are used — the Notes feed template is our own.
+  const { default: rssPlugin } = await import("@11ty/eleventy-plugin-rss");
+  eleventyConfig.addPlugin(rssPlugin);
 
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");

@@ -996,6 +996,12 @@ button {
   color: var(--ink);
 }
 
+.note-feed {
+  margin-top: var(--space-4);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
 .note {
   padding-block: var(--space-5);
 }
