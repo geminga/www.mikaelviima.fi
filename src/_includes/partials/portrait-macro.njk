@@ -15,5 +15,13 @@
   <p class="portrait-placeholder__text">{{ person.alt }} — portrait pending</p>
 </div>
 {%- endif %}
-<p class="photo-credit">{{ person.credit }}</p>
+<p class="photo-credit">
+  {%- if person.photographer_url -%}
+    Photo: <a class="text-link" href="{{ person.photographer_url }}" target="_blank" rel="noopener">{{ person.photographer_name }}</a>{% if person.year %}, {{ person.year }}{% endif %}
+  {%- elif person.photographer_name -%}
+    Photo: {{ person.photographer_name }}{% if person.year %}, {{ person.year }}{% endif %}
+  {%- else -%}
+    {{ person.credit }}
+  {%- endif -%}
+</p>
 {% endmacro %}

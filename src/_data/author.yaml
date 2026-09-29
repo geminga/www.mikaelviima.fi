@@ -13,7 +13,9 @@ portrait:
   image: "/assets/images/portrait.jpg"
   width: 594
   height: 594
-  credit: "[Photographer credit — pending]"
+  photographer_name: "Juha Törmälä"
+  photographer_url: "https://www.juhatormala.com/"
+  year: 2021
   alt: "Portrait of Mikael Viima"
 
 bios:
