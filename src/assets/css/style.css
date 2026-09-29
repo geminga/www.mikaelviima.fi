@@ -250,12 +250,26 @@ button {
 }
 
 .label {
+  position: relative;
+  display: inline-block;
   font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--smoke);
+  padding-bottom: 0.65em;
+  margin-bottom: 0.4em;
+}
+
+.label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.25rem;
+  height: 3px;
+  background: var(--rust);
 }
 
 .theme-dark .label {
@@ -271,26 +285,37 @@ button {
   font-weight: 500;
   text-decoration: none;
   padding: 0.85em 1.5em;
-  border: 1px solid currentColor;
-  color: var(--ink);
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  border: 1px solid var(--rust);
+  background: var(--rust);
+  color: var(--white);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .button:hover {
-  background: var(--ink);
-  color: var(--white);
+  background: #5c1c1c;
+  border-color: #5c1c1c;
 }
 
 .button--ghost {
+  background: transparent;
   border-color: var(--smoke);
+  color: var(--ink);
 }
 
-.theme-dark .button {
+.button--ghost:hover {
+  background: var(--ink);
+  border-color: var(--ink);
   color: var(--white);
 }
 
-.theme-dark .button:hover {
+.theme-dark .button--ghost {
+  border-color: var(--steel);
+  color: var(--white);
+}
+
+.theme-dark .button--ghost:hover {
   background: var(--white);
+  border-color: var(--white);
   color: var(--carbon);
 }
 
@@ -342,7 +367,7 @@ button {
   text-decoration: none;
   color: var(--ink);
   padding-bottom: 0.2em;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
   transition: border-color var(--transition-fast);
 }
 
@@ -561,6 +586,7 @@ button {
 /* -------------------- Pull quote -------------------- */
 
 .pull-quote {
+  position: relative;
   font-family: var(--font-serif);
   font-weight: 500;
   font-style: italic;
@@ -569,6 +595,8 @@ button {
   line-height: 1.2;
   max-width: 18ch;
   margin: 0 0 var(--space-3);
+  padding-left: var(--space-3);
+  border-left: 4px solid var(--rust);
 }
 
 .pull-quote--section {
