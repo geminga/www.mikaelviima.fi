@@ -89,6 +89,7 @@ image_alt: "…"
 image_width: 1600      # give real pixel dimensions to avoid layout shift
 image_height: 1200
 image_caption: "…"
+thumb: /assets/images/notes/…-thumb.jpg   # optional separate list-page thumbnail (e.g. when the lead image is a wide collage)
 thumb_position: "50% 90%"   # optional: where the 4:3 list-page thumbnail crops (CSS object-position; default centre)
 audio: /assets/audio/2026-10-02-gass.mp3             # plain <audio>, preload none, never autoplay
 audio_duration: "6:40"

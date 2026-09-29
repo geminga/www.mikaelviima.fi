@@ -24,8 +24,12 @@ og_type: "website"
       <li class="note-list__item{% if note.data.image %} note-list__item--thumb{% endif %}">
         {%- if note.data.image %}
         <a class="note-list__thumb" href="{{ note.url }}" tabindex="-1" aria-hidden="true">
+          {%- if note.data.thumb %}
+          <img src="{{ note.data.thumb }}" alt=""
+          {%- else %}
           <img src="{{ note.data.image }}" alt=""
             {%- if note.data.image_width %} width="{{ note.data.image_width }}" height="{{ note.data.image_height }}"{% endif %}
+          {%- endif %}
             {%- if note.data.thumb_position %} style="object-position: {{ note.data.thumb_position }}"{% endif %}
             loading="lazy" decoding="async">
         </a>
