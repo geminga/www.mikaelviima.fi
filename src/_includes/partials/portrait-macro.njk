@@ -1,0 +1,19 @@
+{% macro portrait(person) %}
+{%- if person.image %}
+<div class="portrait-frame">
+  <img
+    class="portrait-frame__image"
+    src="{{ person.image }}"
+    alt="{{ person.alt }}"
+    width="{{ person.width }}"
+    height="{{ person.height }}"
+    loading="lazy"
+  >
+</div>
+{%- else %}
+<div class="portrait-placeholder">
+  <p class="portrait-placeholder__text">{{ person.alt }} — portrait pending</p>
+</div>
+{%- endif %}
+<p class="photo-credit">{{ person.credit }}</p>
+{% endmacro %}

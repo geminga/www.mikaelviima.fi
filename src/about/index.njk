@@ -11,6 +11,7 @@ structured_data:
   jobTitle: "Poet and novelist"
   nationality: "Finnish"
 ---
+{% import "partials/portrait-macro.njk" as p %}
 <section class="section theme-dark motif-host">
   {% include "partials/wind-mark.njk" %}
   <div class="wrap">
@@ -39,10 +40,7 @@ structured_data:
 <section class="section">
   <div class="wrap about-teaser">
     <div>
-      <div class="portrait-placeholder">
-        <p class="portrait-placeholder__text">{{ author.portrait.alt }} — portrait pending</p>
-      </div>
-      <p class="photo-credit">{{ author.portrait.credit }}</p>
+      {{ p.portrait(author.portrait) }}
     </div>
     <div>
       <h2 class="content-section__heading">Psychology explains less than people hope. Literature can sometimes get closer.</h2>

@@ -10,6 +10,7 @@ structured_data:
   url: "https://www.mikaelviima.com/"
 ---
 {% import "partials/cover-macro.njk" as c %}
+{% import "partials/portrait-macro.njk" as p %}
 <section class="hero theme-dark">
   {% include "partials/wind-mark.njk" %}
   <div class="wrap">
@@ -118,10 +119,7 @@ structured_data:
 <section class="section">
   <div class="wrap about-teaser">
     <div>
-      <div class="portrait-placeholder">
-        <p class="portrait-placeholder__text">{{ author.portrait.alt }} — portrait pending</p>
-      </div>
-      <p class="photo-credit">{{ author.portrait.credit }}</p>
+      {{ p.portrait(author.portrait) }}
     </div>
     <div>
       <p class="label content-section__label">About</p>

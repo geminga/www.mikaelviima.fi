@@ -10,7 +10,10 @@ instagram_url: "https://www.instagram.com/mikaelviima/"
 optional_social_url: ""
 
 portrait:
-  credit: "[Photographer credit — pending final portrait]"
+  image: "/assets/images/portrait.jpg"
+  width: 594
+  height: 594
+  credit: "[Photographer credit — pending]"
   alt: "Portrait of Mikael Viima"
 
 bios:
