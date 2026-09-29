@@ -12,6 +12,16 @@
 
 ---
 
+> ## Amendment note (added 2026-09-29 — read this before the rest of the document)
+>
+> This brief was written by ChatGPT, not by a designer or developer — confirmed directly by the user. Its **content, voice, positioning and brand-hierarchy sections remain authoritative** and the live site follows them. Its **visual prescriptions** (mood, palette usage, typography weight/scale, motion, imagery treatment) turned out to read as flat/generic when implemented literally, and have been deliberately adapted with the user's explicit sign-off — see `CLAUDE.md`'s "Design additions beyond the brief" section for the specifics (bolder type contrast, a recurring wind-line brand motif, more confident use of the rust accent, etc.). The palette's actual hex values and the three-typeface system below are unchanged; only how confidently they're used has changed.
+>
+> **§30 ("Content Still Requiring Final Input") below is now substantially out of date.** As of 2026-09-29: contact/press/rights email, Instagram, the production domain, all three book covers, and the author portrait (with photographer credit) are all resolved — see `CLAUDE.md` for the real values and where they live. Only the poetry excerpts, the third Aarni Susi novel's status, and English-market translation-rights status remain genuinely open. Don't treat §30's original list as current without checking `CLAUDE.md` first.
+>
+> Live site: **https://www.mikaelviima.com/**. For anything about *how the site is built* or *what's actually true right now*, `CLAUDE.md` in the repo root is the source of truth, not this document.
+
+---
+
 # 1. Brand Positioning
 
 ## Primary identity
@@ -1518,16 +1528,19 @@ Do not hard-code the contact email into five unrelated templates.
 
 # 30. Content Still Requiring Final Input
 
-Claude Code should leave obvious placeholders for these rather than guessing:
+*Updated 2026-09-29 — see the amendment note at the top of this document. Original list below, struck through where resolved.*
 
-- `{{CONTACT_EMAIL}}`
-- `{{PRESS_EMAIL}}`
-- `{{RIGHTS_CONTACT}}`
-- `{{INSTAGRAM_URL}}`
-- final preferred domain
-- final author portrait(s)
-- photographer credits
-- high-resolution book covers
+- ~~`{{CONTACT_EMAIL}}`~~ — resolved: `mikaelviima@outlook.com`
+- ~~`{{PRESS_EMAIL}}`~~ — resolved: same address
+- ~~`{{RIGHTS_CONTACT}}`~~ — resolved: same address
+- ~~`{{INSTAGRAM_URL}}`~~ — resolved: `instagram.com/mikaelviima`
+- ~~final preferred domain~~ — resolved: `www.mikaelviima.com`
+- ~~final author portrait(s)~~ — resolved: real photo live on Home and About
+- ~~photographer credits~~ — resolved: Juha Törmälä, 2021, credited and linked. Copyright/usage-rights status with WSOY is still unconfirmed — the credit is a good-faith courtesy, not a legal clearance.
+- ~~high-resolution book covers~~ — resolved: all three, sourced from WSOY/Otava directly
+
+Still genuinely open:
+
 - 3–6 poetry excerpts
 - final confirmation of **FEED** as collection title
 - final wording of manuscript status
@@ -1668,6 +1681,8 @@ The important things are:
 ---
 
 # 34. Suggested Launch Hero in Final Form
+
+*Superseded 2026-09-29 — the user rewrote this directly. Live version: "Poetry. / Fiction. / The human animal without an alibi." (three stacked lines, poetry first per the standing poetry-first rule), and the closing line now reads "...and the things behind masks." instead of "...the explanations people invent after the fact." The original suggestion below is kept for reference only.*
 
 If only one piece of copy survives this document, use this:
 
