@@ -13,6 +13,9 @@
         {%- if author.instagram_url and not author.instagram_url.startsWith("[") %}
         <li><a href="{{ author.instagram_url }}">Instagram</a></li>
         {%- endif %}
+        {%- if author.flickr_url %}
+        <li><a href="{{ author.flickr_url }}">Flickr</a></li>
+        {%- endif %}
       </ul>
     </nav>
 

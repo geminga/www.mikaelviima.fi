@@ -21,6 +21,7 @@ The English-language author website for **Mikael Viima** (literary name of Finni
 - **No CSS framework.** Hand-written CSS implementing the brief's palette/type system (`src/assets/css/style.css`).
 - **Self-hosted fonts** (Newsreader, Inter, IBM Plex Mono, woff2 only, latin subset, `src/assets/fonts/`) — self-hosting avoids leaking visitor IPs to Google on every pageview via the Google Fonts CDN, which is the correct read of the brief's "no invasive third parties" privacy requirement.
 - **Zero client-side JS** beyond what's strictly needed — currently just `src/assets/js/nav.js`, a ~10-line mobile-nav toggle. Keep it that way; add JS only if a feature genuinely can't work without it.
+- **Stay static — decided by the user 2026-09-30.** WordPress/PHP or any server-side CMS was considered and rejected (security upkeep, hosting, JS weight, tracking, no git history). If browser/phone editing is ever wanted, add a git-based CMS (Decap CMS, Pages CMS) on top of this repo rather than changing the stack.
 - Deploy: **GitHub Pages via GitHub Actions** (`.github/workflows/deploy.yml`), building `src/` → `_site/` on every push to `main` and publishing. Pages is configured with Source = GitHub Actions in the repo settings (already done, don't need to redo it).
 
 ## Domain & DNS (live, not placeholder)
@@ -46,6 +47,7 @@ Templates read from these — e.g. `{{ author.contact_email }}` — so a value o
 
 - Contact / press / rights email: `mikaelviima@outlook.com` (same address for all three, per user's explicit choice)
 - Instagram: `https://www.instagram.com/mikaelviima/` (linked on Contact and in the footer)
+- Flickr: `https://www.flickr.com/photos/194305403@N07/` (display name Mikael Viima, username androidtemplar; taken from the link on mannelaukkanen.fi, 2026-09-30). Linked on Contact, in the footer, and on the Notes list page — plain links only, never embed Flickr galleries (third-party scripts/tracking).
 - Production domain: `www.mikaelviima.com` (see DNS section above)
 - All three book covers — downloaded directly from WSOY's and Otava's own sites, see `src/assets/images/covers/*.jpg`, wired via `book.cover_image`/`cover_width`/`cover_height` in `books.yaml`
 - Publisher links — each book's own page (`wsoy.fi/kirjat/verijalki`, `wsoy.fi/kirjat/rekyyli`, `otava.fi/kirjat/vaaralliset-gurut`), not just a generic author page. No English-language pages exist on either publisher's site yet — checked directly, don't assume one exists later without checking again.
