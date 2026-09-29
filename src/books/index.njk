@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+seo_title: "Books — Mikael Viima"
+meta_description: "Books by Mikael Viima and Manne Laukkanen: the Aarni Susi psychological crime novels Verijälki and Rekyyli, plus the nonfiction work Vaaralliset gurut."
+og_type: "website"
+---
+<section class="section theme-dark">
+  <div class="wrap">
+    <p class="label content-section__label">Books</p>
+    <h1 class="content-section__heading" style="font-size: clamp(2.25rem, 5vw, 3.5rem); max-width: none;">Crime, psychology, manipulation.</h1>
+    <div class="content-section__body">
+      <p>
+        Mikael Viima's published fiction begins with the Aarni Susi series:
+        psychologically unstable, hard-boiled crime novels set in contemporary
+        Helsinki.
+      </p>
+      <p>
+        His nonfiction, published under <strong>Manne Laukkanen</strong>, examines
+        manipulation, coercive control, dangerous leaders and statistical
+        psychological profiling.
+      </p>
+      <p>
+        The existing books are published in Finnish. English-language readers should
+        be given a clear English synopsis without pretending that an English edition
+        already exists.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {%- for book in books %}
+    <article class="book-detail" style="margin-bottom: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid rgba(24,26,29,0.12);">
+      <div>
+        <div class="cover">
+          <span class="cover__placeholder">Cover — {{ book.title }}<br>(pending art)</span>
+        </div>
+      </div>
+      <div class="book-detail__body">
+        <h2 class="content-section__heading">{{ book.title }}</h2>
+        <p class="book-card__meta">
+          {%- if book.series %}Aarni Susi #{{ book.series_number }} — {% endif -%}
+          {{ book.publisher }}, {{ book.year }} — {{ book.language }}
+          {%- if book.nonfiction %} — Nonfiction{% endif %}
+        </p>
+        <div class="content-section__body">{{ book.card_summary | md | safe }}</div>
+        {%- if book.literal_title_gloss %}
+        <p class="book-note">Literal English gloss of the {{ book.language }} title: "{{ book.literal_title_gloss }}." {% if book.nonfiction %}Published under the author's real name, Manne Laukkanen.{% else %}This is not an announced English-edition title.{% endif %}</p>
+        {%- endif %}
+        <p><a class="button button--ghost" href="/books/{{ book.slug }}/">About {{ book.title }}</a></p>
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section section--tight theme-steel">
+  <div class="wrap">
+    <p class="label content-section__label">Aarni Susi III</p>
+    <h2 class="content-section__heading">In development.</h2>
+    <p class="content-section__body">The third novel continues the psychological and moral arc of Aarni Susi.</p>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+---
+permalink: "sitemap.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- set baseUrl = site.url if site.url and not site.url.startsWith("[") else "" %}
+  <url><loc>{{ baseUrl }}/</loc></url>
+  <url><loc>{{ baseUrl }}/poetry/</loc></url>
+  <url><loc>{{ baseUrl }}/books/</loc></url>
+{%- for book in books %}
+  <url><loc>{{ baseUrl }}/books/{{ book.slug }}/</loc></url>
+{%- endfor %}
+  <url><loc>{{ baseUrl }}/about/</loc></url>
+  <url><loc>{{ baseUrl }}/press/</loc></url>
+  <url><loc>{{ baseUrl }}/contact/</loc></url>
+</urlset>

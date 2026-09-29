@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+seo_title: "Contact — Mikael Viima"
+meta_description: "Contact Mikael Viima for publishing, translation rights, representation, interviews, readings and festival invitations."
+og_type: "website"
+---
+<section class="section">
+  <div class="wrap">
+    <h1 class="content-section__heading">Contact</h1>
+    <div class="content-section__body">
+      <p>
+        For <strong>publishing, translation rights, representation, interviews,
+        readings, festival invitations and professional enquiries</strong>:
+      </p>
+    </div>
+    <p class="contact-email">{{ author.contact_email }}</p>
+    <p class="content-section__body">
+      For rights to individual Finnish editions, use the appropriate publisher/rights
+      contact once confirmed.
+    </p>
+
+    <div class="contact-block" style="margin-top: var(--space-4);">
+      <p class="label content-section__label">Social</p>
+      <p>Instagram: {{ author.instagram_url }}</p>
+      {%- if author.optional_social_url %}
+      <p>Other: {{ author.optional_social_url }}</p>
+      {%- endif %}
+    </div>
+  </div>
+</section>

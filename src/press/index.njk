@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+seo_title: "Press & Media — Mikael Viima"
+meta_description: "Press information, bios and interview topics for Mikael Viima, Finnish author of psychological noir and poetry."
+og_type: "website"
+---
+<section class="section theme-dark">
+  <div class="wrap">
+    <p class="label content-section__label">Press / media</p>
+    <h1 class="content-section__heading" style="max-width: none;">Mikael Viima — press information</h1>
+    <div class="content-section__body">
+      <p>For interviews, readings, festival appearances, publishing enquiries and media requests:</p>
+    </div>
+    <p class="contact-email">{{ author.press_email }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="bio-block">
+      <p class="label bio-block__label">50-word bio</p>
+      <p class="content-section__body">{{ author.bios.fifty_word }}</p>
+    </div>
+    <div class="bio-block">
+      <p class="label bio-block__label">100-word bio</p>
+      <p class="content-section__body">{{ author.bios.hundred_word }}</p>
+    </div>
+    <div class="bio-block">
+      <p class="label bio-block__label">One-line bio</p>
+      <p class="content-section__body">{{ author.bios.one_line }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight theme-steel">
+  <div class="wrap">
+    <h2 class="content-section__heading">Suggested interview topics</h2>
+    <ul class="fact-list">
+      {%- for topic in author.interview_topics %}
+      <li>{{ topic }}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="content-section__heading">Press assets</h2>
+    <div class="content-section__body">
+      <p>Available on request until downloadable assets are published here:</p>
+    </div>
+    <ul class="fact-list">
+      <li>1 landscape author photo</li>
+      <li>1 portrait author photo</li>
+      <li>High-resolution book covers</li>
+      <li>50-word and 100-word bios (above)</li>
+      <li>Publication metadata</li>
+      <li>Contact information</li>
+    </ul>
+    <p class="book-note">Every photograph will include a visible photographer credit in the asset metadata or caption.</p>
+  </div>
+</section>

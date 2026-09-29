@@ -1,0 +1,22 @@
+{%- set pageTitle = seo_title or title or site.name -%}
+{%- set pageDescription = meta_description or "" -%}
+{%- set canonicalUrl = (site.url + page.url) if site.url and not site.url.startsWith("[") else page.url -%}
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDescription }}">
+<link rel="canonical" href="{{ canonicalUrl }}">
+
+<meta property="og:type" content="{{ og_type or 'website' }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDescription }}">
+<meta property="og:url" content="{{ canonicalUrl }}">
+<meta property="og:site_name" content="{{ site.name }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ pageTitle }}">
+<meta name="twitter:description" content="{{ pageDescription }}">
+
+{%- if structured_data %}
+<script type="application/ld+json">
+{{ structured_data | dump | safe }}
+</script>
+{%- endif %}

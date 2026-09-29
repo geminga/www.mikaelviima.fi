@@ -1,0 +1,39 @@
+public_name: "Mikael Viima"
+legal_name: "Manne Mikael Laukkanen"
+short_descriptor: "Finnish author of psychological noir and poetry"
+location: "Finland"
+
+contact_email: "[CONTACT_EMAIL — confirm before launch]"
+press_email: "[PRESS_EMAIL — confirm before launch]"
+rights_contact: "[RIGHTS_CONTACT — confirm before launch]"
+instagram_url: "[INSTAGRAM_URL — confirm before launch]"
+optional_social_url: ""
+
+portrait:
+  credit: "[Photographer credit — pending final portrait]"
+  alt: "Portrait of Mikael Viima"
+
+bios:
+  one_line: "Mikael Viima is a Finnish author of psychological noir and poetry, with a PhD in psychology and books published by WSOY and Otava."
+  fifty_word: "Mikael Viima is the literary name of Finnish writer Manne Mikael Laukkanen. He is the author of the Aarni Susi crime novels Verijälki and Rekyyli, published by WSOY, and holds a PhD in psychology. His current work includes English-language poetry and fiction."
+  hundred_word: "Mikael Viima is the literary name of Finnish writer Manne Mikael Laukkanen. His crime novels Verijälki (2022) and Rekyyli (2023), published by WSOY, combine hard-boiled crime fiction with psychological instability, documentary realism and contemporary Helsinki. Under his real name, Laukkanen is also the author of the nonfiction book Vaaralliset gurut (Otava, 2024), an examination of manipulation, coercive control and dangerous leaders. He holds a PhD in psychology, with doctoral work connected to serial-criminal profiling, and has a long background in technology and data. His current literary focus includes poetry and English-language fiction."
+
+background:
+  - "Author of the Aarni Susi crime series"
+  - "Published by WSOY and Otava in Finland"
+  - "PhD in psychology"
+  - "Doctoral research connected to serial-criminal profiling"
+  - "Long background in technology, data and complex systems"
+  - "Musician"
+  - "Based in Finland"
+
+interview_topics:
+  - "Psychologically unstable protagonists"
+  - "Criminal profiling and its limits"
+  - "Damage in fiction without glamour"
+  - "Manipulation and coercive control"
+  - "Science and empirical reality in poetry"
+  - "Moving from Finnish publication to English-language work"
+  - "The overlap between systems thinking and character"
+  - "Helsinki as a crime-fiction setting"
+  - "Rhythm, music and sentence-level writing"

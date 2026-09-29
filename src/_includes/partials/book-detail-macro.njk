@@ -1,0 +1,62 @@
+{% macro bookDetail(book) %}
+<section class="section">
+  <div class="wrap book-detail">
+    <div>
+      <div class="cover">
+        <span class="cover__placeholder">Cover — {{ book.title }}<br>(pending art)</span>
+      </div>
+    </div>
+
+    <div class="book-detail__body">
+      <p class="label content-section__label">
+        {%- if book.series %}{{ book.series }} #{{ book.series_number }}{% else %}Nonfiction{% endif -%}
+      </p>
+      <h1 class="content-section__heading" style="max-width: none;">{{ book.title }}</h1>
+
+      <div class="content-section__body">{{ book.page_intro | md | safe }}</div>
+
+      {%- if book.review_quote %}
+      <blockquote class="review-quote">
+        &ldquo;{{ book.review_quote }}&rdquo;
+        <cite>— {{ book.review_source }}{% if book.review_note %} ({{ book.review_note }}){% endif %}</cite>
+      </blockquote>
+      {%- endif %}
+
+      <dl class="book-detail__meta-list">
+        <div><dt>Author</dt><dd>{{ book.author_name }}</dd></div>
+        {%- if book.series %}
+        <div><dt>Series</dt><dd>{{ book.series }}, Book {{ book.series_number }}</dd></div>
+        {%- endif %}
+        <div><dt>Publisher</dt><dd>{{ book.publisher }}</dd></div>
+        <div><dt>Original publication</dt><dd>{{ book.publication_date_display }}</dd></div>
+        <div><dt>Original language</dt><dd>{{ book.language }}</dd></div>
+        <div><dt>Hardcover pages</dt><dd>{{ book.pages_hardcover }}</dd></div>
+        <div><dt>Hardcover ISBN</dt><dd>{{ book.isbn_hardcover }}</dd></div>
+        <div><dt>Formats</dt><dd>{{ book.formats }}</dd></div>
+        {%- if book.cover_design %}
+        <div><dt>Cover design</dt><dd>{{ book.cover_design }}</dd></div>
+        {%- endif %}
+        {%- if book.audiobook_reader %}
+        <div><dt>Audiobook reader</dt><dd>{{ book.audiobook_reader }}</dd></div>
+        {%- endif %}
+        <div><dt>English edition</dt><dd>Not currently published</dd></div>
+      </dl>
+
+      {%- if book.literal_title_gloss %}
+      <p class="book-note">
+        {%- if book.nonfiction -%}
+          Literal English gloss: &ldquo;{{ book.literal_title_gloss }}.&rdquo; Published under the author's real name, Manne Laukkanen.
+        {%- else -%}
+          Literal English gloss of the Finnish title: &ldquo;{{ book.literal_title_gloss }}.&rdquo; This is not an announced English-edition title.
+        {%- endif %}
+      </p>
+      {%- endif %}
+
+      <div class="content-section__body" style="margin-top: var(--space-3);">
+        <p>Originally published in {{ book.language }} by <strong>{{ book.publisher }}</strong> in {{ book.year }}.</p>
+        <p>For English-language publication or rights enquiries: {{ author.rights_contact }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endmacro %}

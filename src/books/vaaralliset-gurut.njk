@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+permalink: "/books/vaaralliset-gurut/"
+seo_title: "Vaaralliset gurut — Manne Laukkanen | Nonfiction"
+meta_description: "Vaaralliset gurut, nonfiction by Manne Laukkanen (Otava, 2024), examines manipulation, coercive control and destructive leaders."
+og_type: "book"
+structured_data:
+  "@context": "https://schema.org"
+  "@type": "Book"
+  name: "Vaaralliset gurut"
+  author:
+    "@type": "Person"
+    name: "Manne Laukkanen"
+    alternateName: "Mikael Viima"
+  publisher: "Otava"
+  datePublished: "2024-10-17"
+  inLanguage: "fi"
+  isbn: "978-951-1-42050-7"
+  numberOfPages: 234
+---
+{% import "partials/book-detail-macro.njk" as m %}
+{{ m.bookDetail(books | findBySlug("vaaralliset-gurut")) }}

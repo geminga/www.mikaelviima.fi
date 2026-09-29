@@ -1,0 +1,69 @@
+- slug: verijalki
+  title: "Verijälki"
+  author_name: "Mikael Viima"
+  series: "Aarni Susi"
+  series_number: 1
+  publisher: "WSOY"
+  publication_date: "2022-02-08"
+  publication_date_display: "8 February 2022"
+  year: 2022
+  language: "Finnish"
+  pages_hardcover: 356
+  isbn_hardcover: "978-951-0-47442-6"
+  formats: "Hardcover, ebook, audiobook; later paperback edition"
+  cover_design: "Ville Laihonen"
+  audiobook_reader: "Mikko Leskelä"
+  english_edition: false
+  literal_title_gloss: "Blood Trace"
+  gloss_is_official_title: false
+  card_summary: "A violent-crime investigator wakes at an airport in a foreign country with fresh blood under his fingernails and no reliable memory of how it got there.\n\nBack in a winter-dark Helsinki, fragments begin to return: a mutilated body in the water, old records of extreme violence, a graveyard at night, a trail of blood.\n\nAarni Susi has spent his career hunting damaged minds.\n\nNow the least trustworthy one may be his own."
+  page_intro: "## Aarni Susi is one step away from evil. What if he already crossed it?\n\nAarni Susi comes to at an airport abroad.\n\nThere is fresh blood under his fingernails.\n\nHe does not know whose.\n\nWhat returns to him comes in fragments: a disfigured body in shallow water, archival material describing old brutality, a graveyard at night, blood, darkness.\n\nSusi is a violent-crime investigator used to reconstructing other people's actions from the traces they leave behind. This time the traces may point inward.\n\nSet against a winter-dark Helsinki, **Verijälki** begins the Aarni Susi series: hard-boiled crime fiction in which the investigator's own cognition is not a safe place to stand."
+  review_quote: "The spirit of hard-boiled crime arrives in 2020s Helsinki."
+  review_source: "Helsingin Sanomat"
+  review_note: "translated from Finnish"
+
+- slug: rekyyli
+  title: "Rekyyli"
+  author_name: "Mikael Viima"
+  series: "Aarni Susi"
+  series_number: 2
+  publisher: "WSOY"
+  publication_date: "2023-02-06"
+  publication_date_display: "6 February 2023"
+  year: 2023
+  language: "Finnish"
+  pages_hardcover: 334
+  isbn_hardcover: "978-951-0-47854-7"
+  formats: "Hardcover, ebook, audiobook"
+  cover_design: "Ville Laihonen"
+  audiobook_reader: "Mikko Leskelä"
+  english_edition: false
+  literal_title_gloss: "Recoil"
+  gloss_is_official_title: false
+  card_summary: "A serial-arson investigation collides with a sequence of murders. One of the dead keeps producing information after death, and the trail leads toward people connected with national security.\n\nSusi responds in the only way he knows how: with experience, speed, recklessness and increasingly unconventional tools.\n\nThe investigation widens.\n\nSo does the damage."
+  page_intro: "## Aarni Susi removes the mask. What remains is not reassuring.\n\nA serial-arson case and a sequence of murders land on Susi's desk at the same time.\n\nThen one of the dead begins to speak.\n\nThe information left behind draws the investigation toward institutions connected with national security and forces Susi into a pursuit in which conventional caution is a liability.\n\nExperience helps.\n\nSo does recklessness.\n\nSo does technology.\n\nNone of them are free.\n\n**Rekyyli** pushes the Aarni Susi series further into the territory between effectiveness and disintegration: what happens when the traits that make a damaged investigator dangerous also make him useful?"
+  review_quote: ""
+  review_source: ""
+  review_note: ""
+
+- slug: vaaralliset-gurut
+  title: "Vaaralliset gurut"
+  author_name: "Manne Laukkanen"
+  related_identity: "Mikael Viima"
+  nonfiction: true
+  publisher: "Otava"
+  publication_date: "2024-10-17"
+  publication_date_display: "17 October 2024"
+  year: 2024
+  language: "Finnish"
+  pages_hardcover: 234
+  isbn_hardcover: "978-951-1-42050-7"
+  formats: "Hardcover, ebook, audiobook"
+  english_edition: false
+  literal_title_gloss: "Dangerous Gurus"
+  gloss_is_official_title: false
+  card_summary: "Why do people surrender judgment to destructive leaders?\n\n**Vaaralliset gurut** examines manipulation, coercive control, cult dynamics and the psychological machinery that allows charismatic leaders to dominate followers — sometimes long after outsiders can already see the danger.\n\nThe book moves between international and Finnish cases and asks a practical question: how can manipulation be recognized before the cost becomes irreversible?"
+  page_intro: "## Manipulation rarely begins by looking like manipulation.\n\nPublished under the author's real name, **Manne Laukkanen**, **Vaaralliset gurut** is a nonfiction examination of destructive leaders, coercive control, cult dynamics and psychological exploitation.\n\nWhy do followers surrender autonomy?\n\nWhy can danger remain visible for years before a group acts?\n\nWhy do even intelligent people continue to defend systems that are harming them?\n\nAnd how can the mechanisms of manipulation be recognized early enough to matter?\n\nThe book draws on international and Finnish cases and connects them to the psychology of persuasion, dependence and control."
+  review_quote: ""
+  review_source: ""
+  review_note: ""

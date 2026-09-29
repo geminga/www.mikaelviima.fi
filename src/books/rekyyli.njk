@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+permalink: "/books/rekyyli/"
+seo_title: "Rekyyli — Mikael Viima | Aarni Susi #2"
+meta_description: "Rekyyli, the second Aarni Susi novel by Mikael Viima. Published by WSOY in 2023. A serial-arson case, a sequence of murders, and a dead man who keeps talking."
+og_type: "book"
+structured_data:
+  "@context": "https://schema.org"
+  "@type": "Book"
+  name: "Rekyyli"
+  author:
+    "@type": "Person"
+    name: "Mikael Viima"
+  publisher: "WSOY"
+  datePublished: "2023-02-06"
+  inLanguage: "fi"
+  isbn: "978-951-0-47854-7"
+  numberOfPages: 334
+---
+{% import "partials/book-detail-macro.njk" as m %}
+{{ m.bookDetail(books | findBySlug("rekyyli")) }}

@@ -1,0 +1,100 @@
+---
+layout: layouts/base.njk
+seo_title: "About Mikael Viima"
+meta_description: "Mikael Viima is the literary name of Finnish writer Manne Mikael Laukkanen, author of the Aarni Susi crime novels and the nonfiction book Vaaralliset gurut. He holds a PhD in psychology."
+og_type: "profile"
+structured_data:
+  "@context": "https://schema.org"
+  "@type": "Person"
+  name: "Mikael Viima"
+  alternateName: "Manne Mikael Laukkanen"
+  jobTitle: "Author"
+  nationality: "Finnish"
+---
+<section class="section theme-dark">
+  <div class="wrap">
+    <p class="label content-section__label">About</p>
+    <h1 class="content-section__heading" style="font-size: clamp(2.25rem, 5vw, 3.5rem); max-width: none;">Mikael Viima</h1>
+    <div class="content-section__body">
+      <p>
+        Mikael Viima is the literary name of <strong>Manne Mikael Laukkanen</strong>,
+        a Finnish writer with a PhD in psychology and a background spanning criminal
+        profiling research, technology, data and music.
+      </p>
+      <p>
+        His first crime novel, <strong>Verijälki</strong>, was published by WSOY in
+        2022. <strong>Rekyyli</strong> followed in 2023. In 2024, Otava published his
+        nonfiction book <strong>Vaaralliset gurut</strong> under his real name.
+      </p>
+      <p>He now writes poetry and fiction for a wider English-speaking readership.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap about-teaser">
+    <div>
+      <div class="portrait-placeholder">
+        <p class="portrait-placeholder__text">{{ author.portrait.alt }} — portrait pending</p>
+      </div>
+      <p class="photo-credit">{{ author.portrait.credit }}</p>
+    </div>
+    <div>
+      <h2 class="content-section__heading">Psychology explains less than people hope. Literature can sometimes get closer.</h2>
+      <div class="content-section__body">
+        <p>
+          Viima's doctoral work concerned the profiling of serial criminals. He has
+          also spent decades working with data, software and large information
+          systems across industries, in global settings.
+        </p>
+        <p>The combination has left a mark.</p>
+        <p>One discipline asks what a person is likely to do.</p>
+        <p>Another asks what the system is actually doing.</p>
+        <p>Writing gets to ask the more uncomfortable question:</p>
+        <p><strong>What if both descriptions are wrong?</strong></p>
+        <p>
+          His fiction and poetry move repeatedly through psychology, desire, love,
+          memory, aging, science, mortality, art, class, power, politics, manipulation
+          and damage.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <h2 class="content-section__heading">Why Mikael Viima</h2>
+    <div class="content-section__body">
+      <p>&ldquo;Mikael&rdquo; is part of his real name.</p>
+      <p>&ldquo;Viima&rdquo; is a Finnish word associated with a cold, cutting wind.</p>
+      <p>
+        The name began as the identity used for fiction. It now serves as the main
+        literary identity for fiction and poetry in international markets.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight theme-steel">
+  <div class="wrap">
+    <h2 class="content-section__heading">Why write?</h2>
+    <div class="content-section__body">
+      <p>Because some things still seem unsaid.</p>
+      <p>Or said badly.</p>
+      <p>Or softened until they no longer resemble the thing itself.</p>
+      <p>The poems and novels begin there.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="content-section__heading">Background</h2>
+    <ul class="fact-list">
+      {%- for item in author.background %}
+      <li>{{ item }}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

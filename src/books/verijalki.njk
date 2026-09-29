@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+permalink: "/books/verijalki/"
+seo_title: "Verijälki — Mikael Viima | Aarni Susi #1"
+meta_description: "Verijälki, the first Aarni Susi novel by Mikael Viima. Published by WSOY in 2022. A violent-crime investigator finds blood under his own fingernails."
+og_type: "book"
+structured_data:
+  "@context": "https://schema.org"
+  "@type": "Book"
+  name: "Verijälki"
+  author:
+    "@type": "Person"
+    name: "Mikael Viima"
+  publisher: "WSOY"
+  datePublished: "2022-02-08"
+  inLanguage: "fi"
+  isbn: "978-951-0-47442-6"
+  numberOfPages: 356
+---
+{% import "partials/book-detail-macro.njk" as m %}
+{{ m.bookDetail(books | findBySlug("verijalki")) }}

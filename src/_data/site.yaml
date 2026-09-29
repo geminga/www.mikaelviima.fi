@@ -1,0 +1,14 @@
+name: "Mikael Viima"
+url: "[FINAL_DOMAIN — confirm before launch]"
+nav_primary:
+  - label: "Poetry"
+    url: "/poetry/"
+  - label: "Books"
+    url: "/books/"
+  - label: "About"
+    url: "/about/"
+  - label: "Contact"
+    url: "/contact/"
+nav_footer:
+  - label: "Press"
+    url: "/press/"

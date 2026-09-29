@@ -1,0 +1,91 @@
+---
+layout: layouts/base.njk
+seo_title: "Poetry — Mikael Viima"
+meta_description: "Poetry by Mikael Viima: science, mortality, damage, love, sex, geopolitics, dark humor and the human condition. FEED is his current English-language collection."
+og_type: "website"
+---
+<section class="section theme-dark">
+  <div class="wrap">
+    <p class="label content-section__label">Poetry</p>
+    <h1 class="content-section__heading" style="font-size: clamp(2.25rem, 5vw, 3.5rem); max-width: none;">FEED</h1>
+    <p class="hero__tagline" style="font-size: 1.35rem;">A book with several nervous systems.</p>
+    <div class="content-section__body">
+      <p>
+        I write poems of the moment something appears unsaid, politely avoided,
+        scientifically misunderstood, emotionally falsified or too funny not to put
+        under pressure.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <p class="content-section__body"><strong>FEED</strong> moves between several recurring territories:</p>
+    <ul class="poetry-territories fact-list">
+      <li>Science, physics and empirical reality</li>
+      <li>Life poems, often at their least polite</li>
+      <li>Compressed aphoristic pieces</li>
+      <li>Geopolitical snapshots</li>
+      <li>Art, artists and the machinery around art</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <h2 class="content-section__heading">About the manuscript</h2>
+    <div class="content-section__body">
+      <p>
+        <strong>FEED</strong> is a selected collection of approximately
+        {{ current_work.poem_count_approx }} poems drawn from a much larger body of work.
+      </p>
+      <p>
+        The register moves from brutal to tender, from empirical to obscene, from the
+        one-line cut to the long-form argument. The point is the same consciousness
+        looking at different kinds of reality without pretending they belong to
+        different universes.
+      </p>
+      <p>Some poems explain.</p>
+      <p>Some accuse.</p>
+      <p>Some remember.</p>
+      <p>Some laugh at precisely the wrong moment.</p>
+      <p>A few do all four.</p>
+      <p><strong>Status:</strong> {{ current_work.poetry_status }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="content-section__heading">Selected poems</h2>
+    <p class="poem-placeholder">
+      Excerpts will appear here once the final manuscript selection is locked — one
+      science/reality poem, one brutal life poem, one compressed/aphoristic piece, one
+      poem with humor, and one poem showing formal/architectural play.
+    </p>
+
+    <div class="poem">
+      <p class="poem__title">{{ '{{POEM_1_TITLE}}' }}</p>
+      <pre class="poem__body">{{ '{{POEM_1_TEXT}}' }}</pre>
+    </div>
+    <div class="poem">
+      <p class="poem__title">{{ '{{POEM_2_TITLE}}' }}</p>
+      <pre class="poem__body">{{ '{{POEM_2_TEXT}}' }}</pre>
+    </div>
+    <div class="poem">
+      <p class="poem__title">{{ '{{POEM_3_TITLE}}' }}</p>
+      <pre class="poem__body">{{ '{{POEM_3_TEXT}}' }}</pre>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight theme-dark">
+  <div class="wrap">
+    <p class="label content-section__label">For editors and publishers</p>
+    <p class="content-section__body">
+      For the manuscript, selected poems, publication enquiries, or rights discussions:
+    </p>
+    <p class="contact-email">{{ author.contact_email }}</p>
+  </div>
+</section>
