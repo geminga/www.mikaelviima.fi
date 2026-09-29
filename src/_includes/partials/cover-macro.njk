@@ -1,0 +1,18 @@
+{% macro cover(book) %}
+{%- if book.cover_image %}
+<div class="cover">
+  <img
+    class="cover__image"
+    src="{{ book.cover_image }}"
+    alt="{{ book.title }} — cover"
+    width="{{ book.cover_width }}"
+    height="{{ book.cover_height }}"
+    loading="lazy"
+  >
+</div>
+{%- else %}
+<div class="cover cover--placeholder">
+  <span class="cover__placeholder">Cover — {{ book.title }}<br>(pending art)</span>
+</div>
+{%- endif %}
+{% endmacro %}

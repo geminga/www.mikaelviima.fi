@@ -13,7 +13,10 @@
   formats: "Hardcover, ebook, audiobook; later paperback edition"
   cover_design: "Ville Laihonen"
   audiobook_reader: "Mikko Leskelä"
-  publisher_url: "https://www.wsoy.fi/kirjailija/mikael-viima"
+  publisher_url: "https://www.wsoy.fi/kirjat/verijalki/"
+  cover_image: "/assets/images/covers/verijalki.jpg"
+  cover_width: 800
+  cover_height: 1262
   english_edition: false
   literal_title_gloss: "Blood Trace"
   gloss_is_official_title: false
@@ -38,7 +41,10 @@
   formats: "Hardcover, ebook, audiobook"
   cover_design: "Ville Laihonen"
   audiobook_reader: "Mikko Leskelä"
-  publisher_url: "https://www.wsoy.fi/kirjailija/mikael-viima"
+  publisher_url: "https://www.wsoy.fi/kirjat/rekyyli/"
+  cover_image: "/assets/images/covers/rekyyli.jpg"
+  cover_width: 800
+  cover_height: 1263
   english_edition: false
   literal_title_gloss: "Recoil"
   gloss_is_official_title: false
@@ -62,6 +68,9 @@
   isbn_hardcover: "978-951-1-42050-7"
   formats: "Hardcover, ebook, audiobook"
   publisher_url: "https://otava.fi/kirjat/vaaralliset-gurut/"
+  cover_image: "/assets/images/covers/vaaralliset-gurut.jpg"
+  cover_width: 1200
+  cover_height: 1744
   english_edition: false
   literal_title_gloss: "Dangerous Gurus"
   gloss_is_official_title: false

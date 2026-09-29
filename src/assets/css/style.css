@@ -631,11 +631,8 @@ button {
 .cover {
   position: relative;
   aspect-ratio: 2 / 3;
+  overflow: hidden;
   background-color: var(--white);
-  background-image:
-    linear-gradient(rgba(24, 26, 29, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 26, 29, 0.05) 1px, transparent 1px);
-  background-size: 18px 18px;
   border: 1px solid rgba(24, 26, 29, 0.18);
   box-shadow: 0 6px 18px -12px rgba(11, 13, 15, 0.45);
   display: flex;
@@ -644,8 +641,22 @@ button {
   margin-bottom: var(--space-1);
 }
 
-.cover::before,
-.cover::after,
+.cover__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cover--placeholder {
+  background-image:
+    linear-gradient(rgba(24, 26, 29, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 26, 29, 0.05) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.cover--placeholder::before,
+.cover--placeholder::after,
 .portrait-placeholder::before,
 .portrait-placeholder::after {
   content: "";
@@ -655,7 +666,7 @@ button {
   pointer-events: none;
 }
 
-.cover::before,
+.cover--placeholder::before,
 .portrait-placeholder::before {
   top: 10px;
   left: 10px;
@@ -663,7 +674,7 @@ button {
   border-left: 1px solid var(--rust);
 }
 
-.cover::after,
+.cover--placeholder::after,
 .portrait-placeholder::after {
   bottom: 10px;
   right: 10px;

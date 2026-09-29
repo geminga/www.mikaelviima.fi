@@ -9,6 +9,7 @@ structured_data:
   name: "Mikael Viima"
   url: "https://www.mikaelviima.com/"
 ---
+{% import "partials/cover-macro.njk" as c %}
 <section class="hero theme-dark">
   {% include "partials/wind-mark.njk" %}
   <div class="wrap">
@@ -72,9 +73,7 @@ structured_data:
     <div class="book-strip">
       {%- for book in books %}
       <a class="book-card" href="/books/{{ book.slug }}/">
-        <div class="cover">
-          <span class="cover__placeholder">Cover — {{ book.title }}<br>(pending art)</span>
-        </div>
+        {{ c.cover(book) }}
         <p class="book-card__title">{{ book.title }}</p>
         <p class="book-card__meta">{{ book.publisher }}, {{ book.year }}{% if book.nonfiction %} · Nonfiction{% endif %}</p>
       </a>

@@ -4,6 +4,7 @@ seo_title: "Books — Mikael Viima"
 meta_description: "Books by Mikael Viima and Manne Laukkanen: the Aarni Susi psychological crime novels Verijälki and Rekyyli, plus the nonfiction work Vaaralliset gurut."
 og_type: "website"
 ---
+{% import "partials/cover-macro.njk" as c %}
 <section class="section theme-dark motif-host">
   {% include "partials/wind-mark.njk" %}
   <div class="wrap">
@@ -35,9 +36,7 @@ og_type: "website"
     {%- for book in books %}
     <article class="book-detail" style="margin-bottom: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid rgba(24,26,29,0.12);">
       <div>
-        <div class="cover">
-          <span class="cover__placeholder">Cover — {{ book.title }}<br>(pending art)</span>
-        </div>
+        {{ c.cover(book) }}
       </div>
       <div class="book-detail__body">
         <h2 class="content-section__heading">{{ book.title }}</h2>

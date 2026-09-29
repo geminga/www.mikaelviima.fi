@@ -1,10 +1,9 @@
+{% import "partials/cover-macro.njk" as c %}
 {% macro bookDetail(book) %}
 <section class="section">
   <div class="wrap book-detail">
     <div>
-      <div class="cover">
-        <span class="cover__placeholder">Cover — {{ book.title }}<br>(pending art)</span>
-      </div>
+      {{ c.cover(book) }}
     </div>
 
     <div class="book-detail__body">
