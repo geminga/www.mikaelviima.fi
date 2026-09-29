@@ -167,6 +167,8 @@ The brief's literal typography/color spec, rendered as-written, looked flat — 
 
 None of this changes brief-mandated content, copy, brand hierarchy, or the palette's actual hex values — only how confidently the existing tokens are used.
 
+- **Deliberate palette break — "Why write?" on About (2026-09-30, user's explicit choice).** Background is `assets/images/theme/futuristic-datascape.jpg`: a saturated blue/magenta night city with data lines, under a carbon gradient overlay (`.why-write` in `style.css`). The clash with the carbon/paper/rust palette is intentional ("strike the blue night city in the faces of the readers"; his poetry has "strange colours ripping through the agreed palette"). Do not desaturate, tint or remove it. The user may later decide whether such colour breaks become a pattern — ask, don't assume either way. **Rights:** commissioned from an artist and paid for by the user's company; the user holds usage rights.
+
 ## Commands
 
 - `npm run dev` — Eleventy dev server with live reload (`npx eleventy --serve`).
