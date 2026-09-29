@@ -609,6 +609,14 @@ button {
   border-left: 4px solid var(--rust);
 }
 
+/* Longer first-person statements: same treatment, smaller scale so they don't stack into a tower. */
+.pull-quote--long {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.3;
+  max-width: 32ch;
+  margin-top: var(--space-4);
+}
+
 .pull-quote--section {
   padding-block: var(--space-5);
 }

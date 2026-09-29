@@ -71,6 +71,10 @@ Templates read from these — e.g. `{{ author.contact_email }}` — so a value o
 
 The brief's "Copy clichés" list is a hard filter for any new copy: no "master storyteller," "award-winning" (unless named), "unique voice," "gripping page-turner," "journey," "weaving together," "at the intersection of," "delves into," "Nordic darkness," "from the frozen north," etc. Concrete beats abstract; implication beats adjectives. The user has directly flagged and cut generic-sounding lines before ("the explanations people invent after the fact" → "the things behind masks"; tautologies like a repeated "damage" in a list) — read new copy out loud and ask whether it sounds like it could appear on 5,000 other author sites before shipping it. Also see the poetry-first standing rule above.
 
+## Person / point of view (standing rule, set by the user 2026-09-29)
+
+**Third person for the record, first person for the voice.** Facts, credentials, bios, book copy, meta descriptions and anything a journalist or festival might copy-paste are third person ("Viima's doctoral work…", "He holds a PhD…"). First person ("I…") is allowed only where it is visibly set apart as the author speaking — a styled pull-quote (`.pull-quote`, or `.pull-quote--long` for longer lines) or a direct answer to a question heading (About's "Why write?"). Never put an "I" sentence in plain running body text next to "he" copy. Current first-person spots: Home pull-quote, Poetry page opening pull-quote, About "Why write?".
+
 ## Repo structure
 
 ```
