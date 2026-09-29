@@ -167,7 +167,21 @@ The brief's literal typography/color spec, rendered as-written, looked flat — 
 
 None of this changes brief-mandated content, copy, brand hierarchy, or the palette's actual hex values — only how confidently the existing tokens are used.
 
-- **Deliberate palette break — "Why write?" on About (2026-09-30, user's explicit choice).** Background is `assets/images/theme/futuristic-datascape.jpg`: a saturated blue/magenta night city with data lines, under a carbon gradient overlay (`.why-write` in `style.css`). The clash with the carbon/paper/rust palette is intentional ("strike the blue night city in the faces of the readers"; his poetry has "strange colours ripping through the agreed palette"). Do not desaturate, tint or remove it. The user may later decide whether such colour breaks become a pattern — ask, don't assume either way. **Rights:** commissioned from an artist and paid for by the user's company; the user holds usage rights.
+## The rift pattern
+
+A **rift** is a full-width band where a saturated image tears through the carbon/paper/rust palette: "a sudden rift to another reality on a page with text" (the user's words, 2026-09-30). It is deliberate and the user loves it. It mirrors the poetry, which has "strange colours ripping through the agreed palette". Don't treat it as a palette violation to fix: never desaturate, tint or remove a rift.
+
+**First instance:** About → "Why write?", background `assets/images/theme/futuristic-datascape.jpg` (blue/magenta night city with data lines). Rights: commissioned from an artist, paid for by the user's company; the user holds usage rights.
+
+**How to build one:** `<section class="section theme-dark rift" style="--rift-image: url('/assets/images/theme/….jpg')">`. Optional `--rift-position` (CSS background-position) moves the crop. The `.rift` class in `style.css` supplies a carbon gradient overlay: darkest on the left behind the text on desktop, even ~72% on phones. Images go in `src/assets/images/theme/`, as a JPEG around 150–250 KB (originals in `originals/`), with no camera metadata.
+
+**Rules, so it stays a rift and doesn't become decoration:**
+- **At most one per page.** Its force comes from the restraint around it. If every page has one, it becomes the new palette.
+- **Only the user decides where one goes.** Suggest, never add one unprompted.
+- **Only the user's own or licensed art.** Confirm the rights before using an image, and record them here.
+- **Text must stay readable.** Keep the overlay; simulate desktop and ~400px phone before shipping.
+- **Record every instance** under "First instance" above (page, image, rights), so the count stays visible.
+- The user may later decide whether rifts become a wider pattern (e.g. in Notes or Poetry). Ask, don't assume.
 
 ## Commands
 
