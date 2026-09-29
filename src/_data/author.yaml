@@ -1,6 +1,6 @@
 public_name: "Mikael Viima"
 legal_name: "Manne Mikael Laukkanen"
-short_descriptor: "Finnish author of psychological noir and poetry"
+short_descriptor: "Finnish poet and author of psychological noir"
 location: "Finland"
 
 contact_email: "[CONTACT_EMAIL — confirm before launch]"
@@ -14,11 +14,12 @@ portrait:
   alt: "Portrait of Mikael Viima"
 
 bios:
-  one_line: "Mikael Viima is a Finnish author of psychological noir and poetry, with a PhD in psychology and books published by WSOY and Otava."
-  fifty_word: "Mikael Viima is the literary name of Finnish writer Manne Mikael Laukkanen. He is the author of the Aarni Susi crime novels Verijälki and Rekyyli, published by WSOY, and holds a PhD in psychology. His current work includes English-language poetry and fiction."
-  hundred_word: "Mikael Viima is the literary name of Finnish writer Manne Mikael Laukkanen. His crime novels Verijälki (2022) and Rekyyli (2023), published by WSOY, combine hard-boiled crime fiction with psychological instability, documentary realism and contemporary Helsinki. Under his real name, Laukkanen is also the author of the nonfiction book Vaaralliset gurut (Otava, 2024), an examination of manipulation, coercive control and dangerous leaders. He holds a PhD in psychology, with doctoral work connected to serial-criminal profiling, and has a long background in technology and data. His current literary focus includes poetry and English-language fiction."
+  one_line: "Mikael Viima is a Finnish poet and author of psychological noir, with a PhD in psychology and books published by WSOY and Otava."
+  fifty_word: "Mikael Viima is a Finnish poet and novelist — the literary name of Manne Mikael Laukkanen. His debut English-language poetry collection, FEED, is currently in development. His Finnish-language crime novels Verijälki and Rekyyli, published by WSOY, combine hard-boiled plotting with psychological instability. He holds a PhD in psychology."
+  hundred_word: "Mikael Viima is a Finnish poet and novelist — the literary name of Manne Mikael Laukkanen. His first English-language poetry collection, FEED, is currently in development, drawn from a larger body of work spanning science, mortality, damage and dark humor. In Finnish, he is the author of the hard-boiled Aarni Susi crime novels Verijälki (2022) and Rekyyli (2023), published by WSOY, and — under his own name — the nonfiction book Vaaralliset gurut (Otava, 2024), on manipulation and coercive control. He holds a PhD in psychology, with doctoral work connected to serial-criminal profiling, and a long background in technology and data."
 
 background:
+  - "Poet — debut English-language collection FEED in development"
   - "Author of the Aarni Susi crime series"
   - "Published by WSOY and Otava in Finland"
   - "PhD in psychology"
