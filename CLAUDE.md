@@ -54,7 +54,7 @@ Templates read from these — e.g. `{{ author.contact_email }}` — so a value o
 
 **Still placeholder / genuinely open:**
 
-- Poetry excerpts (`{{POEM_1_TITLE}}` / `{{POEM_1_TEXT}}` etc. in `poetry/index.njk`) — not filled in until the final FEED manuscript selection is locked. Do not invent sample poems.
+- Poetry excerpts — `poetry/index.njk`'s "Selected poems" section currently just says "Coming soon." (the old `{{POEM_1_TITLE}}`-style placeholder blocks were removed at the user's request). When the FEED selection is locked, add `.poem` blocks there (`.poem__title` + `<pre class="poem__body">`, CSS already exists). Do not invent sample poems.
 - Third Aarni Susi novel status, translation-rights status for the English market, any agent/representation info — brief explicitly says stay cautious/vague here (see brief §17) until these are publicly confirmed.
 
 **Do not invent values for open items.** When the user supplies something, put it in the relevant `_data/*.yaml` file (or `src/assets/images/`), not scattered across templates.
