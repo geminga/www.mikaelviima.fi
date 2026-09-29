@@ -89,12 +89,13 @@ image_alt: "…"
 image_width: 1600      # give real pixel dimensions to avoid layout shift
 image_height: 1200
 image_caption: "…"
+thumb_position: "50% 90%"   # optional: where the 4:3 list-page thumbnail crops (CSS object-position; default centre)
 audio: /assets/audio/2026-10-02-gass.mp3             # plain <audio>, preload none, never autoplay
 audio_duration: "6:40"
 draft: true            # visible in `npm run dev` (tagged "Draft"), excluded from the live build
 ```
 
-**Phone photos carry GPS coordinates in their metadata — never publish an original.** Put originals in the gitignored `originals/` folder at the repo root (anything under `src/assets/` gets published), then save a web copy: EXIF stripped, longest edge ~1600px, JPEG q≈82, colour (ICC) profile kept. The first two notes (Floor.jpg, PoemStack.JPEG, 2026-09-30) were handled this way. Extra images inside the text use normal Markdown `![alt](/assets/images/notes/…)`. Note images go in `src/assets/images/notes/`, audio in `src/assets/audio/` (voice at ~64 kbps mono ≈ 0.5 MB/min; move audio to external object storage if the repo grows large — never embed SoundCloud/YouTube/Spotify players, they bring third-party tracking).
+**Phone photos carry GPS coordinates in their metadata — never publish an original.** Put originals in the gitignored `originals/` folder at the repo root (anything under `src/assets/` gets published), then save a web copy: EXIF stripped, longest edge ~1600px, JPEG q≈82, colour (ICC) profile kept. The first two notes (Floor.jpg, PoemStack.JPEG, 2026-09-30) were handled this way. Poems inside a note go in a fenced ``` block — Markdown otherwise joins single line breaks into one paragraph; `.note__body pre` styles fenced blocks like `.poem__body` (mono, exact whitespace). Extra images inside the text use normal Markdown `![alt](/assets/images/notes/…)`. Note images go in `src/assets/images/notes/`, audio in `src/assets/audio/` (voice at ~64 kbps mono ≈ 0.5 MB/min; move audio to external object storage if the repo grows large — never embed SoundCloud/YouTube/Spotify players, they bring third-party tracking).
 
 The "Notes" nav item and the sitemap entries appear **automatically** once at least one non-draft note exists (`requires_collection: "notes"` in `site.yaml`, checked in `header.njk`). Until then `/notes/` exists but is unlinked and shows "Coming soon." Not yet built: RSS feed (brief wants one once Notes is actually in use — `@11ty/eleventy-plugin-rss`), podcast-style audio enclosures.
 

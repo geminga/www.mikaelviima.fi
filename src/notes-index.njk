@@ -26,6 +26,7 @@ og_type: "website"
         <a class="note-list__thumb" href="{{ note.url }}" tabindex="-1" aria-hidden="true">
           <img src="{{ note.data.image }}" alt=""
             {%- if note.data.image_width %} width="{{ note.data.image_width }}" height="{{ note.data.image_height }}"{% endif %}
+            {%- if note.data.thumb_position %} style="object-position: {{ note.data.thumb_position }}"{% endif %}
             loading="lazy" decoding="async">
         </a>
         {%- endif %}

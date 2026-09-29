@@ -1048,6 +1048,25 @@ button {
   margin-block: var(--space-3);
 }
 
+/* Fenced ``` blocks in a note are poems: same treatment as .poem__body, whitespace kept exactly. */
+.note__body pre {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  tab-size: 4;
+  margin-block: var(--space-4);
+  padding-left: var(--space-3);
+  border-left: 1px solid rgba(24, 26, 29, 0.2);
+  background: none;
+}
+
+.note__body pre code {
+  font: inherit;
+  background: none;
+  padding: 0;
+}
+
 .note__back {
   margin-top: var(--space-5);
   font-family: var(--font-sans);
