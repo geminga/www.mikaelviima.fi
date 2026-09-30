@@ -21,10 +21,31 @@ og_type: "website"
 
     <div class="contact-block" style="margin-top: var(--space-4);">
       <p class="label content-section__label">Social</p>
-      <p>Instagram: <a class="text-link" href="{{ author.instagram_url }}">@mikaelviima</a></p>
-      {%- if author.flickr_url %}
-      <p>Flickr: <a class="text-link" href="{{ author.flickr_url }}">Mikael Viima</a></p>
-      {%- endif %}
+      {#- Icons are hand-drawn inline SVG (no third-party files), hidden from
+          screen readers; the visible label is the link's accessible name. #}
+      <ul class="social-links">
+        <li>
+          <a class="social-link" href="{{ author.instagram_url }}">
+            <svg class="social-link__icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+              <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/>
+            </svg>
+            <span>Instagram</span>
+          </a>
+        </li>
+        {%- if author.flickr_url %}
+        <li>
+          <a class="social-link" href="{{ author.flickr_url }}">
+            <svg class="social-link__icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+              <circle cx="6" cy="12" r="5.5" fill="currentColor"/>
+              <circle cx="18" cy="12" r="4.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            <span>Flickr</span>
+          </a>
+        </li>
+        {%- endif %}
+      </ul>
       {%- if author.optional_social_url %}
       <p>Other: <a class="text-link" href="{{ author.optional_social_url }}">{{ author.optional_social_url }}</a></p>
       {%- endif %}
