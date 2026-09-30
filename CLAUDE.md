@@ -16,6 +16,10 @@ The English-language author website for **Mikael Viima** (literary name of Finni
 
 **Priority order, stated by the user 2026-09-30:** poetry is the reason this site exists. After it come the Aarni Susi noir novels, in chronological order (Verijälki, Rekyyli, then the unpublished Verililja), then the nonfiction. Finding an English-language publisher for the novels is a separate, later process — don't write copy that implies English editions, translations in progress, or rights status. The Books page follows this order: FEED band, the novels, Verililja band, nonfiction.
 
+**Fiction and nonfiction are kept apart (user, 2026-09-30).** On Home, the "Fiction / Aarni Susi" section shows only the novels; Vaaralliset gurut has its own "Nonfiction / Psychology" section below it, and that is its single mention on the page — the nonfiction is not central to this site, so don't repeat it elsewhere on Home. Both sections filter `books` on `book.nonfiction`. The `.book-strip` grid is fixed at three tracks from 48rem up (and `.book-card` capped at 22rem) so a strip with one or two books keeps the normal cover size.
+
+**Worth repeating, per the user: he is published by both WSOY and Otava, Finland's two main publishing houses.** The Books hero says so and links both publisher author pages (looped from `author.publisher_pages`). Write "Otava", not "OTAVA" — WSOY is an acronym, Otava is not.
+
 ## Stack
 
 - **Eleventy (11ty)**, static site generator. Chosen because the brief requires static output, minimal JS, content in Markdown/JSON/YAML, and "no framework unless it genuinely simplifies maintenance" — 11ty gives shared layouts + a single content-data model without shipping a JS framework to the browser.
@@ -30,15 +34,15 @@ The English-language author website for **Mikael Viima** (literary name of Finni
 
 - Production URL: **https://www.mikaelviima.com/**. `src/CNAME` (passthrough-copied into every build) and `src/_data/site.yaml`'s `url` field both carry this — if the domain ever changes, update both, plus the hardcoded `url` in `index.njk`'s WebSite structured-data block.
 - DNS is hosted at **Zoner** (the user's webhotel provider), not at the registrar. `www` is a CNAME to `geminga.github.io.`; the apex `mikaelviima.com` has 4 A records pointing at GitHub Pages' IPs (`185.199.108/109/110/111.153`) so bare-domain visitors redirect to `www` instead of hitting Zoner's old parking page. Don't touch the `ftp`/`mail`/`pop`/`smtp`/`NS`/`MX`/`TXT` records at Zoner — those are unrelated email/hosting plumbing.
-- HTTPS: GitHub auto-provisions a Let's Encrypt cert for the custom domain once DNS verifies; this can take a while after a domain change. If `https://www.mikaelviima.com/` ever shows the wrong cert (`*.github.io` instead of the real one) or "Enforce HTTPS" is greyed out in Pages settings, that's normal provisioning lag, not a bug — don't "fix" it by changing config.
+- HTTPS: **working since 2026-09-30.** Let's Encrypt cert covering both `www.mikaelviima.com` and `mikaelviima.com` (issued 2026-09-30, GitHub renews it automatically), "Enforce HTTPS" is on, and `http://` plus the bare domain redirect to `https://www.mikaelviima.com/`. History worth knowing: after the domain change GitHub kept serving its generic `*.github.io` cert for 10+ hours with correct DNS — the request had stalled. The fix was in repo Settings → Pages: remove the custom domain, re-enter `www.mikaelviima.com`, save, wait for the DNS check, then tick "Enforce HTTPS" once it stops being greyed out. If the wrong cert ever reappears, check DNS first (`www` CNAME, four apex A records, no CAA record), then repeat that — no repo or config change is needed.
 
 ## Content model
 
 All recurring facts live in `src/_data/*.yaml`, never hard-coded in templates:
 
-- `author.yaml` — name, legal name, short descriptor, contact/press/rights emails, social links, portrait (image path + dimensions + photographer credit), bios, background list, interview topics.
+- `author.yaml` — name, legal name, short descriptor, contact/press/rights emails, social links, `publisher_pages` (author pages on the publishers' own sites: WSOY under "Mikael Viima", Otava under "Manne Laukkanen" — both verified live 2026-09-30), portrait (image path + dimensions + photographer credit), bios, background list, interview topics.
 - `books.yaml` — one entry per book (title, series, publisher, dates, ISBN, cover image + dimensions, publisher URL, review quote, etc.).
-- `current_work.yaml` — FEED (poetry manuscript) title/status/poem count.
+- `current_work.yaml` — FEED (poetry manuscript) title/status/poem count, plus the third Aarni Susi novel's title (Verililja) and status.
 - `site.yaml` — site-wide constants (base URL, nav structure).
 
 Templates read from these — e.g. `{{ author.contact_email }}` — so a value only needs to change in one place.
@@ -196,6 +200,6 @@ A **rift** is a full-width band where a saturated image tears through the carbon
 
 Launch scope = brief's minimum viable site: Home, Poetry (FEED), Books (+ 3 book pages), About, Contact. Press page included as a bonus.
 
-**Live and real**: domain, DNS, HTTPS (once cert finishes provisioning), all contact/social links, all three book covers, the author portrait with photographer credit, poetry-first copy throughout, the confident-rust design pass.
+**Live and real**: domain, DNS, HTTPS (cert issued and enforced 2026-09-30), all contact/social links, both publisher author-page links, all three book covers, the author portrait with photographer credit, poetry-first copy throughout, the confident-rust design pass.
 
-**Still outstanding**: FEED's poem excerpts (manuscript not locked), third Aarni Susi novel status, English-market translation rights status, and resolving (or formally accepting as-is) the portrait's copyright/usage-rights question with WSOY/Juha Törmälä. Check this section and update it as those arrive — and update the brief's own amendment note at the same time if a genuinely new fact gets resolved.
+**Still outstanding**: FEED's poem excerpts (manuscript not locked), third Aarni Susi novel status beyond its title (Verililja), English-market translation rights status, and resolving (or formally accepting as-is) the portrait's copyright/usage-rights question with WSOY/Juha Törmälä. Check this section and update it as those arrive — and update the brief's own amendment note at the same time if a genuinely new fact gets resolved.
