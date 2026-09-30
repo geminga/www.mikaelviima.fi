@@ -651,10 +651,19 @@ button {
   margin-block: var(--space-3);
 }
 
+/* Fixed three tracks on wide screens so a strip holding one or two books
+   keeps the same card size as a full one. */
+@media (min-width: 48rem) {
+  .book-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .book-card {
   text-decoration: none;
   color: inherit;
   display: block;
+  max-width: 22rem;
 }
 
 .cover {

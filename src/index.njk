@@ -73,11 +73,13 @@ structured_data:
 
     <div class="book-strip">
       {%- for book in books %}
+      {%- if not book.nonfiction %}
       <a class="book-card" href="/books/{{ book.slug }}/">
         {{ c.cover(book) }}
         <p class="book-card__title">{{ book.title }}</p>
-        <p class="book-card__meta">{{ book.publisher }}, {{ book.year }}{% if book.nonfiction %} · Nonfiction{% endif %}</p>
+        <p class="book-card__meta">{{ book.publisher }}, {{ book.year }}</p>
       </a>
+      {%- endif %}
       {%- endfor %}
     </div>
 
@@ -87,14 +89,40 @@ structured_data:
 
 <section class="section section--tight">
   <div class="wrap">
+    <p class="label content-section__label">Nonfiction / Psychology</p>
+    <h2 class="content-section__heading">Manipulation rarely begins by looking like manipulation.</h2>
+    <div class="content-section__body">
+      <p>
+        Published under the author's real name, Manne Laukkanen,
+        <strong>Vaaralliset gurut</strong> examines destructive leaders, coercive
+        control and cult dynamics: why followers surrender their judgment, and how
+        manipulation can be recognized before the cost becomes irreversible.
+      </p>
+    </div>
+
+    <div class="book-strip">
+      {%- for book in books %}
+      {%- if book.nonfiction %}
+      <a class="book-card" href="/books/{{ book.slug }}/">
+        {{ c.cover(book) }}
+        <p class="book-card__title">{{ book.title }}</p>
+        <p class="book-card__meta">{{ book.publisher }}, {{ book.year }}</p>
+      </a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
     <h2 class="content-section__heading">Published. And now, it begins.</h2>
     <div class="content-section__body">
       <p>
         Mikael Viima's fiction has been published in Finland by WSOY. Under his real
-        name, Manne Laukkanen, he is also the author of the nonfiction book
-        <strong>Vaaralliset gurut</strong>, published by Otava in 2024, as well as his
-        PhD thesis, blueprinting a statistical home-prediction system to predict the
-        home base of serial offenders based on their spatial and crime-site behavior.
+        name, Manne Laukkanen, he is also the author of a PhD thesis blueprinting a
+        statistical home-prediction system to predict the home base of serial
+        offenders based on their spatial and crime-site behavior.
       </p>
     </div>
     <p><a class="button button--ghost" href="/books/">Books &amp; publication history</a></p>
