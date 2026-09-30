@@ -1032,6 +1032,17 @@ button {
   font-size: 0.9rem;
 }
 
+.note-more {
+  margin-top: var(--space-3);
+  font-family: var(--font-sans);
+}
+
+.note-more__label {
+  margin: 0 0 var(--space-2);
+  font-size: 0.9rem;
+  color: var(--smoke);
+}
+
 .note {
   padding-block: var(--space-5);
 }

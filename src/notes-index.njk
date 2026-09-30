@@ -50,8 +50,11 @@ og_type: "website"
     </ol>
     <p class="note-feed">
       <a class="text-link" href="/notes/feed.xml">Follow via RSS</a>
-      {%- if author.flickr_url %} · More photographs on <a class="text-link" href="{{ author.flickr_url }}">Flickr</a>{% endif %}
     </p>
+    <div class="note-more">
+      <p class="note-more__label">More photographs</p>
+      {% include "partials/social-links.njk" %}
+    </div>
     {%- else %}
     <p class="poem-placeholder">Coming soon.</p>
     {%- endif %}
