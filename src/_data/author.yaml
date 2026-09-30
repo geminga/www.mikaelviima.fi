@@ -10,6 +10,13 @@ instagram_url: "https://www.instagram.com/mikaelviima/"
 flickr_url: "https://www.flickr.com/photos/194305403@N07/"   # display name Mikael Viima; linked from mannelaukkanen.fi
 optional_social_url: ""
 
+# Author pages on the publishers' own sites (Otava's is under the legal name)
+publisher_pages:
+  - publisher: "WSOY"
+    url: "https://www.wsoy.fi/kirjailija/mikael-viima"
+  - publisher: "Otava"
+    url: "https://otava.fi/kirjailijat/manne-laukkanen/"
+
 portrait:
   image: "/assets/images/portrait.jpg"
   width: 594

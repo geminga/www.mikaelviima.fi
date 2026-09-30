@@ -25,9 +25,12 @@ og_type: "website"
         psychological profiling.
       </p>
       <p>
-        The existing books are published in Finnish.
+        The existing books are published in Finnish by WSOY and Otava, Finland's
+        two main publishing houses.
       </p>
-      <p><a class="text-link" href="https://www.wsoy.fi/kirjailija/mikael-viima">View the WSOY author page</a></p>
+      {%- for page in author.publisher_pages %}
+      <p><a class="text-link" href="{{ page.url }}">View the {{ page.publisher }} author page</a></p>
+      {%- endfor %}
     </div>
   </div>
 </section>
