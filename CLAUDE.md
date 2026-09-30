@@ -12,7 +12,9 @@ This file (CLAUDE.md) records *how the site is built* (stack, structure, convent
 
 The English-language author website for **Mikael Viima** (literary name of Finnish writer Manne Mikael Laukkanen), live at **https://www.mikaelviima.com/**, deployed to GitHub Pages from this repo (`geminga/www.mikaelviima.fi` — the repo name doesn't match the live domain; that's intentional, the user decided not to rename it). Fiction + poetry under "Mikael Viima"; nonfiction under his legal name "Manne Laukkanen" as a secondary credential — do not treat the two names as equal/competing brands.
 
-**Standing content rule, given directly by the user (not just brief inference): lead the whole site with poetry, not fiction**, wherever the two are mentioned together. The English-language debut is poetry (FEED), so poetry comes first in meta descriptions, bios, background lists, and any "he writes X and Y" construction — the Finnish WSOY/Otava fiction and nonfiction catalog is credibility/supporting evidence, not the lead. Already applied throughout Home, About, and Press; apply it to any new copy too.
+**Standing content rule, given directly by the user (not just brief inference): lead the whole site with poetry, not fiction**, wherever the two are mentioned together. The English-language debut is poetry (FEED), so poetry comes first in meta descriptions, bios, background lists, and any "he writes X and Y" construction — the Finnish WSOY/Otava fiction and nonfiction catalog is credibility/supporting evidence, not the lead. Already applied throughout Home, About, Press and Books; apply it to any new copy too.
+
+**Priority order, stated by the user 2026-09-30:** poetry is the reason this site exists. After it come the Aarni Susi noir novels, in chronological order (Verijälki, Rekyyli, then the unpublished Verililja), then the nonfiction. Finding an English-language publisher for the novels is a separate, later process — don't write copy that implies English editions, translations in progress, or rights status. The Books page follows this order: FEED band, the novels, Verililja band, nonfiction.
 
 ## Stack
 
@@ -57,7 +59,7 @@ Templates read from these — e.g. `{{ author.contact_email }}` — so a value o
 **Still placeholder / genuinely open:**
 
 - Poetry excerpts — `poetry/index.njk`'s "Selected poems" section currently just says "Coming soon." (the old `{{POEM_1_TITLE}}`-style placeholder blocks were removed at the user's request). When the FEED selection is locked, add `.poem` blocks there (`.poem__title` + `<pre class="poem__body">`, CSS already exists). Do not invent sample poems. **Open idea from the user (2026-09-29), not decided:** show each poem as a screenshot of his own transparent bash terminal instead of as text. If that route is taken: include the full poem text for screen readers (not just a short alt), check legibility at ~400px phone width, and scrub the image of anything visible through the transparent background. Revisit when the poems arrive.
-- Third Aarni Susi novel status, translation-rights status for the English market, any agent/representation info — brief explicitly says stay cautious/vague here (see brief §17) until these are publicly confirmed.
+- Third Aarni Susi novel: working title **Verililja** is public (user's decision, 2026-09-30; lives in `current_work.yaml`, shown on the Books page after the FEED entry). Everything else about it — plot, release year, publisher — stays unpublished. Also open: translation-rights status for the English market, any agent/representation info — brief explicitly says stay cautious/vague here (see brief §17) until these are publicly confirmed.
 
 **Do not invent values for open items.** When the user supplies something, put it in the relevant `_data/*.yaml` file (or `src/assets/images/`), not scattered across templates.
 
@@ -187,6 +189,7 @@ A **rift** is a full-width band where a saturated image tears through the carbon
 
 - `npm run dev` — Eleventy dev server with live reload (`npx eleventy --serve`).
 - `npm run build` — production build to `_site/`.
+- **Node 24** locally and in the deploy workflow (`node-version` in `deploy.yml`) — keep the two in step. Ubuntu's stock Node 18.19 cannot build the site: it fails loading `.eleventy.js` with `SyntaxError: Unexpected token 'with'`. On a fresh machine, install Node 24 (NodeSource), then `npm ci`.
 - **Run build commands from the repo root.** If a build suddenly reports "Wrote 0 files" with no error, check `pwd` first — Eleventy silently falls back to default config (treats `.` as input, finds nothing) if run from the wrong directory (e.g. after a `cd` into `src/assets/images` that didn't get undone). Not a real bug, just a shell-state trap.
 
 ## Status

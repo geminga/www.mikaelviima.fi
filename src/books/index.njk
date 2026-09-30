@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 seo_title: "Books — Mikael Viima"
-meta_description: "Books by Mikael Viima and Manne Laukkanen: the Aarni Susi psychological crime novels Verijälki and Rekyyli, plus the nonfiction work Vaaralliset gurut."
+meta_description: "Books by Mikael Viima: the poetry collection FEED, in development in English; the Aarni Susi crime novels Verijälki and Rekyyli; and the nonfiction work Vaaralliset gurut, published as Manne Laukkanen."
 og_type: "website"
 ---
 {% import "partials/cover-macro.njk" as c %}
@@ -9,12 +9,15 @@ og_type: "website"
   {% include "partials/wind-mark.njk" %}
   <div class="wrap">
     <p class="label content-section__label">Books</p>
-    <h1 class="content-section__heading" style="font-size: clamp(2.25rem, 5vw, 3.5rem); max-width: none;">Crime, psychology, manipulation.</h1>
+    <h1 class="content-section__heading" style="font-size: clamp(2.25rem, 5vw, 3.5rem); max-width: none;">Poetry, crime, manipulation.</h1>
     <div class="content-section__body">
       <p>
-        Mikael Viima's published fiction begins with the Aarni Susi series:
-        psychologically unstable, hard-boiled crime novels set in contemporary
-        Helsinki.
+        Mikael Viima's current English-language work is poetry:
+        <strong>{{ current_work.poetry_title }}</strong>, a collection in development.
+      </p>
+      <p>
+        His published fiction is the Aarni Susi series: psychologically unstable,
+        hard-boiled crime novels set in contemporary Helsinki.
       </p>
       <p>
         His nonfiction, published under <strong>Manne Laukkanen</strong>, examines
@@ -29,9 +32,36 @@ og_type: "website"
   </div>
 </section>
 
+<section class="section section--tight theme-steel">
+  <div class="wrap">
+    <p class="label content-section__label">{{ current_work.poetry_title }}</p>
+    <h2 class="content-section__heading">In development.</h2>
+    <p class="content-section__body">An English-language poetry collection of approximately {{ current_work.poem_count_approx }} poems, selected from a much larger body of work.</p>
+    <p><a class="text-link" href="/poetry/">About {{ current_work.poetry_title }}</a></p>
+  </div>
+</section>
+
+{# Page order: poetry, then the Aarni Susi novels chronologically (ending with
+    the unpublished third), then nonfiction. books.yaml lists the novels first,
+    so the third-novel band is slotted in just before the first nonfiction entry. #}
 <section class="section">
   <div class="wrap">
     {%- for book in books %}
+    {%- if book.nonfiction and not loop.first and not books[loop.index0 - 1].nonfiction %}
+  </div>
+</section>
+
+<section class="section section--tight theme-steel">
+  <div class="wrap">
+    <p class="label content-section__label">{{ current_work.aarni_susi_iii_title }}</p>
+    <h2 class="content-section__heading">{{ current_work.aarni_susi_iii_status }}</h2>
+    <p class="content-section__body">The third Aarni Susi novel continues the psychological and moral arc of the series.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {%- endif %}
     <article class="book-detail" style="margin-bottom: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid rgba(24,26,29,0.12);">
       <div>
         {{ c.cover(book) }}
@@ -51,13 +81,5 @@ og_type: "website"
       </div>
     </article>
     {%- endfor %}
-  </div>
-</section>
-
-<section class="section section--tight theme-steel">
-  <div class="wrap">
-    <p class="label content-section__label">Aarni Susi III</p>
-    <h2 class="content-section__heading">In development.</h2>
-    <p class="content-section__body">The third novel continues the psychological and moral arc of Aarni Susi.</p>
   </div>
 </section>
